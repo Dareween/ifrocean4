@@ -1,5 +1,5 @@
 <?php
-include_once 'Ifrocean_BDD/Plage.php';
+include_once 'Ifrocean_BDD/Triangle.php';
 
 ?>
 
@@ -13,7 +13,7 @@ and open the template in the editor.
 <html>
    <head>
         <meta charset="UTF-8">
-        <title>Liste des plages</title>
+        <title>Liste des triangles</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -23,31 +23,23 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Liste des plages</h1>
+        <h1>Liste des triangles</h1>
         <table class="table">
             <tr>
-                
-                 <th>Nom de la plage</th>  
-                <th>Superficie</th>
-                <th>Ville</th>
-                <th>Date de prélevement</th>
+                <th>Triangles</th>
                 <th>Voir</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
                 
             </tr>
-            <?php $plages=Plage::getAllPlages();
-            foreach ($plages as $plage){
+            <?php $triangles=Triangle::getAllTriangles();
+            foreach ($triangles as $tri){
             ?>
             <tr>
-                
-                <td><?php echo $plage->nomplage ?></td>
-                <td><?php echo $plage->superficie ?></td>
-                <td><?php echo $plage->ville ?></td>
-                <td><?php echo $plage->date_prelevement ?></td>
-                <td><a href="12-VoirPlage.php?id=<?php echo $plage->id ?>">Voir</a></td>
-                <td><a href="12-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a></td>
-                <td><a href="10-SupprimerPlage.php?id=<?php echo $plage->id ?>">Supprimer</a></td>
+                <td> Triangle N°<?php echo $tri->id ?></td>
+                <td><a href="10-VoirTriangle.php?id=<?php echo $tri->id ?>">Voir</a></td>
+                <td><a href="10-ModifierTriangle.php?id=<?php echo $tri->id ?>">Modifier</a></td>
+                <td><a href="10-SupprimerTriangle.php?id=<?php echo $tri->id ?>">Supprimer</a></td>
             </tr> 
             
               <?php  

@@ -37,49 +37,22 @@ class Espece {
           
           
     
-           
+   
             $req->bindParam(":nomespece", $this->nomespece);
-     
-            
-           
-            
             
             $req->execute();
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-
-
-        //fermeture
-        $pdo = null;
-    }
-    
-    public function InsererEspeceDansZone() {
-
-        try {
-            $pdo = new PDO("mysql:host=" . Config::SERVERNAME
-                    . ";dbname=" . Config::DBNAME
-                    , Config::USERNAME
-                    , Config::PASSWORD);
             
             
-                
-            // pour éviter les injections sql
+            /*ne marche pas
+         $req2 = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id) "
+                  . "VALUES (:zone_id,:espece_id, :quantite)");
            
-          $req = $pdo->prepare("INSERT INTO `db_ifrocean`.`zones_has_especes` (`zones_id`, `especes_id`, `quantite`) "
-                  . "VALUES ('1', '2', '25');");
-          
-          
-    
-           
-            $req->bindParam(":nomespece", $this->nomespece);
-        
-     
-            
-           
+            $req2->bindParam(":espece_id", $this->espece_id);
+            $req2->bindParam(":quantite", $this->quantite);
+            $req2->bindParam(":zone_id", $this->zone_id);
+            $req2->execute();*/
             
             
-            $req->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
@@ -98,15 +71,16 @@ class Espece {
     
     
     
+    
+    
 
-    public static function getAllZonesHasEspeces() {
+    public static function getAllEspeces() {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT zones_id, nomespece, quantite FROM `zones_has_especes`INNER JOIN zones ON zones_has_especes.zones_id = zones.id INNER JOIN especes ON zones_has_especes.especes_id = especes.id 
--- Recherche");
+        $req = $pdo->prepare("SELECT zones_id, nomespece, quantite FROM `especes`");
         
 
         $req->execute();

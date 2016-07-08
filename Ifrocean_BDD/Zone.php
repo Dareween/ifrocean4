@@ -7,11 +7,13 @@ class Zone extends Polygone {
 
     public $id;
     public $surface;
+    public $plage_id;
 
 
-    public function __construct($p1, $p2, $p3, $p4, $couleur, $cle = 0) {
+    public function __construct($p1, $p2, $p3, $p4, $couleur, $plage_id, $cle = 0) {
         $desPoints = array($p1, $p2, $p3, $p4);
         $this->id = $cle;
+        $this->plage_id = $plage_id;
        parent::__construct($desPoints, $couleur);
         /*$this->surface=$this->calculerSurface();*/
     }
@@ -46,11 +48,11 @@ class Zone extends Polygone {
                 
             // pour éviter les injections sql
            
-          $req = $pdo->prepare("INSERT INTO zones(latAdegre, latAmin, latAsec, longAdegre, longAmin, longAsec, "
+          $req = $pdo->prepare("INSERT INTO zones(plage_id, latAdegre, latAmin, latAsec, longAdegre, longAmin, longAsec, "
                   . "latBdegre, latBmin, latBsec, longBdegre, longBmin, longBsec, "
                   . "latCdegre, latCmin, latCsec, longCdegre, longCmin, longCsec, "
                   . "latDdegre, latDmin, latDsec, longDdegre, longDmin, longDsec, surface, latA, longA, latB, longB, latC, longC, latD, longD) "
-                  . "VALUES (:latAdegre, :latAmin, :latAsec, :longAdegre, :longAmin, :longAsec, "
+                  . "VALUES (:plage_id, :latAdegre, :latAmin, :latAsec, :longAdegre, :longAmin, :longAsec, "
                   . ":latBdegre, :latBmin, :latBsec, :longBdegre, :longBmin, :longBsec, "
                   . ":latCdegre, :latCmin, :latCsec, :longCdegre, :longCmin, :longCsec, "
                   . ":latDdegre, :latDmin, :latDsec, :longDdegre, :longDmin, :longDsec, :surface, :latA, :longA, :latB, :longB, :latC, :longC, :latD, :longD)");
@@ -83,6 +85,7 @@ class Zone extends Polygone {
             $req->bindParam(":longDmin", $this->lesPoints[3]->minuteLong);
             $req->bindParam(":longDsec", $this->lesPoints[3]->secondeLong);
             $req->bindParam(":surface", $this->surface);
+            $req->bindParam(":plage_id", $this->plage_id);
              $req->bindParam(":latA", $this->lesPoints[0]->latitudeNumerique);
              $req->bindParam(":longA", $this->lesPoints[0]->longitudeNumerique);
              $req->bindParam(":latB", $this->lesPoints[1]->latitudeNumerique);
@@ -94,7 +97,7 @@ class Zone extends Polygone {
             
              
            
-            /*$req->bindParam(":surface", surface);*/
+          
             
             
             
@@ -113,19 +116,11 @@ class Zone extends Polygone {
                 . ";dbname=" . Config::DBNAME
                 , Config::USERNAME
                 , Config::PASSWORD);
-        
-       /*requet qui fonctionne pour récuperer les infos croisées entre zones et objet
-         * 
-        $req = $pdo->prepare("SELECT zones_id, nomespece, quantite FROM 
-            `zones_has_especes`INNER JOIN zones ON zones_has_especes.zones_id = zones.id 
-            INNER JOIN especes ON zones_has_especes.especes_id = especes.id ");*/
 
-
-                
-        $req = $pdo->prepare("select id, latAdegre, latAmin, latAsec, longAdegre, longAmin, longAsec, "
+        $req = $pdo->prepare("select id, plage_id, latAdegre, latAmin, latAsec, longAdegre, longAmin, longAsec, "
                 . "latBdegre, latBmin, latBsec, longBdegre, longBmin, longBsec, "
                 . "latCdegre, latCmin, latCsec, longCdegre, longCmin, longCsec, "
-                . "latDdegre, latDmin, latDsec, longDdegre, longsDmin, longDsec, "
+                . "latDdegre, latDmin, latDsec, longDdegre, longDmin, longDsec, "
                 . "couleur from zones");
 
         $req->execute();
@@ -138,13 +133,14 @@ class Zone extends Polygone {
                 $p2 = new Point($ligne["latBdegre"], $ligne["latBmin"], $ligne["latBsec"], $ligne["longBdegre"], $ligne["longBmin"], $ligne["longBsec"]);
                 $p3 = new Point($ligne["latCdegre"], $ligne["latCmin"], $ligne["latCsec"], $ligne["longCdegre"], $ligne["longCmin"], $ligne["longCsec"]);
                 $p4 = new Point($ligne["latDdegre"], $ligne["latDmin"], $ligne["latDsec"], $ligne["longDdegre"], $ligne["longDmin"], $ligne["longDsec"]);
-                $zones[] = new Zone($p1, $p2, $p3, $p4, $ligne["couleur"], $ligne["id"]);
+                $zones[] = new Zone($p1, $p2, $p3, $p4, $ligne["couleur"], $ligne["plage_id"], $ligne["id"]);
   
             }
             return $zones;
         }
     }
-
+    
+    
     public static function getById($cle) {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME

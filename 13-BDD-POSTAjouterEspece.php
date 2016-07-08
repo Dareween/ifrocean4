@@ -8,6 +8,8 @@ include_once 'Ifrocean_BDD/Espece.php';
 
 
 $nomespece = $_POST['nomespece'];
+$zone_id = $_POST['zone_id'];
+$quantite = $_POST['quantite'];
 
 
 $esp = new Espece($nomespece);

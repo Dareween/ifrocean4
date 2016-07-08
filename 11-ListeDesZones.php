@@ -26,7 +26,10 @@ and open the template in the editor.
         <h1>Liste des zones</h1>
         <table class="table">
             <tr>
+                <th>Plages</th>
                 <th>Zones</th>
+                <th>Nom espece</th>
+                <th>Quantité</th>
                  <th>Latitude A</th>
                  <th>degrés</th>
                   <th>minutes</th>
@@ -70,8 +73,11 @@ and open the template in the editor.
             foreach ($zones as $zone){
             ?>
             <tr>
-                <td> Zone N°<?php echo $zone->id ?></td>
-               
+                <td> Plage N°<?php echo $zone->plage_id ?></td>
+                <td> Zone N°<?php echo $zone->id ?></td> 
+                <td>Nom espece : <?php echo $zone->nomespece ?></td>
+                <td>Quantité<?php echo $zone->quantite ?></td>
+                
                 <td>Lat A</td>
                 <td><?php echo $zone->lesPoints[0]->degreLat ?>°</td>
                 <td> <?php echo $zone->lesPoints[0]->minuteLat ?>'</td>

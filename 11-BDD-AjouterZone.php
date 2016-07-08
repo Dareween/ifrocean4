@@ -1,3 +1,8 @@
+<?php
+include_once 'Ifrocean_BDD/Plage.php';
+
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -16,27 +21,23 @@
      <div class="container">
             <h1>Ajouter une zone</h1>
             <hr>
+            
             <form action="11-BDD-POSTAjouterZone.php"
                   method="post">
                 <h2>Test sélectionner une plage à terminer</h2>
-                   <div class="radio">
+                    <?php $plages=Plage::getAllPlages();
+                    foreach ($plages as $plage){
+                    ?>   
+                <div class="radio">
                     <label>
-                      <input type="radio" name="plage" id="optionsRadios1" value="option1" checked>
-                      Plage 1
+                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->nomplage ?>" checked>
+                      <?php echo $plage->nomplage ?>
                     </label>
                   </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="plage" id="optionsRadios2" value="option2">
-                      Plage 2
-                    </label>
-                  </div>
-                  <div class="radio disabled">
-                    <label>
-                      <input type="radio" name="plage" id="optionsRadios3" value="option3" disabled>
-                     Plage3
-                    </label>
-                  </div>
+                  <?php  
+                 }
+                ?>
+                  
 
                 
                 <h2>Point A</h2>

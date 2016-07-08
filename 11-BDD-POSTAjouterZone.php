@@ -41,6 +41,11 @@ $secondeLongD = $_POST['longDsec'];
 
 $couleur='#000088';
 
+$plage_id= $_POST['plage_id'];
+
+
+
+
 
 
 /*couleur=$_POST["couleur"];*/
@@ -52,6 +57,7 @@ $zo = new Zone(
         new Point($degreLatB, $minuteLatB, $secondeLatB, $degreLongB, $minuteLongB, $secondeLongB),
         new Point($degreLatC, $minuteLatC, $secondeLatC, $degreLongC, $minuteLongC, $secondeLongC),
         new Point($degreLatD, $minuteLatD, $secondeLatD, $degreLongD, $minuteLongD, $secondeLongD),
+        $plage_id,
         $couleur
         );
 

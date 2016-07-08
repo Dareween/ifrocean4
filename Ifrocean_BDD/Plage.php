@@ -68,7 +68,7 @@ class Plage {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("select id, nomplage, superficie, ville, date_prelevement from plages");
+        $req = $pdo->prepare("select nomplage, superficie, ville, date_prelevement from plages");
 
         $req->execute();
 

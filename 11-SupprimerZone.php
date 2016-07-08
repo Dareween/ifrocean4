@@ -4,7 +4,7 @@ $id=$_GET["id"];
 $zone=Zone::getById($id);
 $zone->supprimer();
 
-header('Location: 10-ListeDesZones.php');
+header('Location: 11-ListeDesZones.php');
 
 
 ?>

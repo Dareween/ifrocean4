@@ -1,5 +1,5 @@
 <?php
-include_once 'Ifrocean_BDD/Triangle.php';
+include_once 'Ifrocean_BDD/Espece.php';
 
 ?>
 
@@ -13,7 +13,7 @@ and open the template in the editor.
 <html>
    <head>
         <meta charset="UTF-8">
-        <title>Liste des triangles</title>
+        <title>Liste des espèces</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -23,23 +23,27 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Liste des triangles</h1>
+        <h1>Liste des espèces</h1>
         <table class="table">
             <tr>
-                <th>Triangles</th>
+                <th>Id</th>
+                 <th>Nom de l'espèce</th> 
+                  <th>quantité</th>
                 <th>Voir</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
                 
             </tr>
-            <?php $triangles=Triangle::getAllTriangles();
-            foreach ($triangles as $tri){
+            <?php $zoneshasespeces=Espece::getAllZonesHasEspeces();
+            foreach ($zoneshasespeces as $zonehasespece){
             ?>
             <tr>
-                <td> Triangle N°<?php echo $tri->id ?></td>
-                <td><a href="10-VoirTriangle.php?id=<?php echo $tri->id ?>">Voir</a></td>
-                <td><a href="10-ModifierTriangle.php?id=<?php echo $tri->id ?>">Modifier</a></td>
-                <td><a href="10-SupprimerTriangle.php?id=<?php echo $tri->id ?>">Supprimer</a></td>
+                <td>Espece N°<?php echo $zonehasespece->id ?></td>
+                <td><?php echo $zonehasespece->nomespece ?></td>
+                <td><?php echo $zonehasespece->quantite ?></td>
+                <td><a href="14-VoirEspece.php?id=<?php echo $espece->id ?>">Voir</a></td>
+                <td><a href="14-ModifierEspece.php?id=<?php echo $espece->id ?>">Modifier</a></td>
+                <td><a href="14-SupprimerEspece.php?id=<?php echo $espece->id ?>">Supprimer</a></td>
             </tr> 
             
               <?php  

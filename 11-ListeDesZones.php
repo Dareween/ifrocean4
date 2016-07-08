@@ -27,12 +27,38 @@ and open the template in the editor.
         <table class="table">
             <tr>
                 <th>Zones</th>
-                 <th>Lat deg</th>
-                  <th>Lat min</th>
-                  <th>Lat sec</th>
-                   <th>Long deg</th>
-                    <th>Long min</th> 
-                    <th>Long sec</th>
+                 <th>Latitude A</th>
+                 <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
+                  <th>Longitude A</th>
+                   <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
+                  <th>Latitude B</th>
+                 <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
+                  <th>Longitude B</th>
+                   <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
+                   <th>Latitude C</th>
+                 <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
+                  <th>Longitude C</th>
+                   <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
+                   <th>Latitude D</th>
+                 <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
+                  <th>Longitude D</th>
+                   <th>degrés</th>
+                  <th>minutes</th>
+                  <th>secondes</th>
                     
                     
                 <th>Voir</th>
@@ -45,17 +71,45 @@ and open the template in the editor.
             ?>
             <tr>
                 <td> Zone N°<?php echo $zone->id ?></td>
-                <td> Lat deg<?php echo $zone->degrelat ?></td>
-                <td> Lat min<?php echo $zone->minutelat ?></td>
-                <td> Lat sec<?php echo $zone->secondelat ?></td>
-                <td> Long deg<?php echo $zone->degrelong ?></td>
-                <td> Long min<?php echo $zone->minutelong ?></td>
-                <td> Long sec<?php echo $zone->secondelong ?></td>
+               
+                <td>Lat A</td>
+                <td><?php echo $zone->lesPoints[0]->degreLat ?>°</td>
+                <td> <?php echo $zone->lesPoints[0]->minuteLat ?>'</td>
+                <td> <?php echo $zone->lesPoints[0]->secondeLat ?>''</td>
+                <td>Long A</td>
+                <td><?php echo $zone->lesPoints[0]->degreLong ?>°</td>
+                <td><?php echo $zone->lesPoints[0]->minuteLong ?>'</td>
+                <td><?php echo $zone->lesPoints[0]->secondeLong ?>''</td>
+                <td>Lat B</td>
+                <td><?php echo $zone->lesPoints[1]->degreLat ?>°</td>
+                <td><?php echo $zone->lesPoints[1]->minuteLat ?>'</td>
+                <td><?php echo $zone->lesPoints[1]->secondeLat ?>''</td>
+                <td>Long B</td>
+                <td><?php echo $zone->lesPoints[1]->degreLong ?>°</td>
+                <td><?php echo $zone->lesPoints[1]->minuteLong ?>'</td>
+                <td><?php echo $zone->lesPoints[1]->secondeLong ?>''</td>
+                <td>Lat C</td>
+                 <td><?php echo $zone->lesPoints[2]->degreLat ?>°</td>
+                <td><?php echo $zone->lesPoints[2]->minuteLat ?>'</td>
+                <td><?php echo $zone->lesPoints[2]->secondeLat ?>''</td>
+                <td>Long C</td>
+                <td><?php echo $zone->lesPoints[2]->degreLong ?>°</td>
+                <td><?php echo $zone->lesPoints[2]->minuteLong ?>'</td>
+                <td><?php echo $zone->lesPoints[2]->secondeLong ?>''</td>
+                  <td>Lat D</td>
+                 <td><?php echo $zone->lesPoints[3]->degreLat ?>°</td>
+                <td><?php echo $zone->lesPoints[3]->minuteLat ?>'</td>
+                <td><?php echo $zone->lesPoints[3]->secondeLat ?>''</td>
+                <td>Long D</td>
+                <td><?php echo $zone->lesPoints[3]->degreLong ?>°</td>
+                <td><?php echo $zone->lesPoints[3]->minuteLong ?>'</td>
+                <td><?php echo $zone->lesPoints[3]->secondeLong ?>''</td>
+                
 
                 
-                <td><a href="10-VoirZone.php?id=<?php echo $zone->id ?>">Voir</a></td>
-                <td><a href="10-ModifierZone.php?id=<?php echo $zone->id ?>">Modifier</a></td>
-                <td><a href="10-SupprimerZone.php?id=<?php echo $zone->id ?>">Supprimer</a></td>
+                <!-- A créer : voir zone--><td><a href="11-VoirZone.php?id=<?php echo $zone->id ?>">Voir</a></td>
+                <!-- A créer : modifier zone--><td><a href="11-ModifierZone.php?id=<?php echo $zone->id ?>">Modifier</a></td>
+                <td><a href="11-SupprimerZone.php?id=<?php echo $zone->id ?>">Supprimer</a></td>
             </tr> 
             
               <?php  

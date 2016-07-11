@@ -9,15 +9,16 @@ include_once 'Ifrocean_BDD/Espece.php';
 
 
 $nomespece = $_POST['nomespece'];
+$id = $_POST['id'];
 
 
 
-$esp = new Espece($nomespece);
+$esp = new Espece($nomespece, $id);
 
 
 
 //Enregistrer en BDD
-$esp->Inserer();
+$esp->Modifier();
 
 
 

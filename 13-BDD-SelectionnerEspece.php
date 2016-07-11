@@ -1,6 +1,6 @@
 <?php
-include_once 'Ifrocean_BDD/Zone.php';
-include_once 'Ifrocean_BDD/Plage.php';
+include_once 'Ifrocean_BDD/Espece.php';
+
 
 ?>
 
@@ -11,7 +11,7 @@ include_once 'Ifrocean_BDD/Plage.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ajouter une espece</title>
+        <title>Sélectionner une espece</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -24,20 +24,25 @@ include_once 'Ifrocean_BDD/Plage.php';
      <div class="container">
             <h1>Ajouter une espèce</h1>
             <hr>
-            <form action="13-BDD-POSTAjouterEspece.php"
-                  method="post">
-                <h2>Espèce</h2>
-          
-                <div class="form-group row">
-                    <label for="nomespece" class="col-sm-2
-                           form-control-label">Nom espèce</label>
-                    <div class="col-sm-4">
-                        <input type="text" required
-                               name="nomespece" id="nomespece"
-                               class="form-control">
-                    </div>
-                </div>
-      
+            <form action="13-VoirEspece.php"
+             
+                     
+              <h2>Sélectionner une espèce</h2>
+                 
+                     <?php $especes=Espece::getAllEspeces();
+            foreach ($especes as $espece){
+            ?>
+                
+                     <div class="radio">
+                    <label>
+                      <input type="radio" name="espece_id" id='espece_id' value="<?php echo $espece->id ?>" checked>
+                      Nom de l'espèce <?php echo $espece->nomespece ?>
+                    </label>
+                  </div>
+                     
+                <?php
+            }
+            ?>
        
                 <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
                 

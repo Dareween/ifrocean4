@@ -3,17 +3,21 @@
 
 include_once 'Config.php';
 
-class Espece {
+class ZoneHasEspece {
 
-    public $id;
-    public $nomespece;
+   
+    public $quantite;
+    public $zone_id;
+    public $espece_id;
+  
    
     
 
 
-    public function __construct($nomespece, $cle = 0) {
-        $this->id = $cle;
-        $this->nomespece = $nomespece;
+    public function __construct($zone_id, $espece_id, $quantite) {
+        $this->zone_id = $zone_id;
+        $this->espece_id = $espece_id;
+        $this->quantite = $quantite;
      
     }
 
@@ -32,19 +36,17 @@ class Espece {
                 
             // pour éviter les injections sql
            
-          $req = $pdo->prepare("INSERT INTO especes(nomespece) "
-                  . "VALUES (:nomespece);");
+          $req = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id, quantite) "
+                  . "VALUES (:zone_id,:espece_id,:quantite);");
+         /**/
           
-          
-    
-   
-            $req->bindParam(":nomespece", $this->nomespece);
+           $req->bindParam(":espece_id", $this->espece_id);
+            $req->bindParam(":zone_id", $this->zone_id);
+            $req->bindParam(":quantite", $this->quantite);
             
-            $req->execute();
+           $req->execute();
             
-            
-            
-            
+     
             
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -55,41 +57,25 @@ class Espece {
         $pdo = null;
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-        
-           public function Modifier() {
+    public static function getAllZonesHasEspeces() {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("UPDATE especes SET nomespece=:nomespece where id=:cle");
-
-        $req->bindParam(":cle", $this->id);
-         $req->bindParam(":nomespece", $this->nomespece);
-
-        $req->execute();
-    }
-
-
-       
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    public static function getAllEspeces() {
-        $pdo = new PDO("mysql:host=" . Config::SERVERNAME
-                . ";dbname=" . Config::DBNAME
-                , Config::USERNAME
-                , Config::PASSWORD);
-
-        $req = $pdo->prepare("SELECT id, nomespece FROM especes");
+        $req = $pdo->prepare("SELECT zone_id, espece_id, quantite FROM zones_has_especes");
         
 
         $req->execute();
@@ -97,14 +83,16 @@ class Espece {
         if ($req->rowCount() >= 1) {
       
             while ($ligne = $req->fetch()) {
-                $especes[] = new Espece($ligne["nomespece"], $ligne["id"]);
+                $zoneshasespeces[] = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["quantite"]);
                 
             }
           
-            return $especes;
+            return $zoneshasespeces;
         }
     }
 
+    /* suite à metre à jour*/
+    
     public static function getById($cle) {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME

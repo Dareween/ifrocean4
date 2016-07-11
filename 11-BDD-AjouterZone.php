@@ -24,7 +24,7 @@ include_once 'Ifrocean_BDD/Plage.php';
             
             <form action="11-BDD-POSTAjouterZone.php"
                   method="post">
-                <h2>Test sélectionner une plage à terminer</h2>
+                <h2>Sélectionner une plage</h2>
                     <?php $plages=Plage::getAllPlages();
                     foreach ($plages as $plage){
                     ?>   

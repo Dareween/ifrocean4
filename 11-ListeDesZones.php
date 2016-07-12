@@ -28,8 +28,7 @@ and open the template in the editor.
             <tr>
                 <th>Plages</th>
                 <th>Zones</th>
-                <th>Nom espece</th>
-                <th>Quantité</th>
+                <th>Surface</th>
                  <th>Latitude A</th>
                  <th>degrés</th>
                   <th>minutes</th>
@@ -68,6 +67,7 @@ and open the template in the editor.
                 <th>Modifier</th>
                 <th>Supprimer</th>
                 
+                
             </tr>
             <?php $zones=Zone::getAllZones();
             foreach ($zones as $zone){
@@ -75,8 +75,8 @@ and open the template in the editor.
             <tr>
                 <td> Plage N°<?php echo $zone->plage_id ?></td>
                 <td> Zone N°<?php echo $zone->id ?></td> 
-                <td>Nom espece : <?php echo $zone->nomespece ?></td>
-                <td>Quantité<?php echo $zone->quantite ?></td>
+                <td><?php echo $zone->surface ?></td>
+                
                 
                 <td>Lat A</td>
                 <td><?php echo $zone->lesPoints[0]->degreLat ?>°</td>

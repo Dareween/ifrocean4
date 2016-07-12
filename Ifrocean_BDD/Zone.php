@@ -15,7 +15,7 @@ class Zone extends Polygone {
         $this->id = $cle;
         $this->plage_id = $plage_id;
        parent::__construct($desPoints, $couleur);
-        /*$this->surface=$this->calculerSurface();*/
+        
     }
 
     
@@ -34,6 +34,8 @@ class Zone extends Polygone {
         return $surface;
         
     }
+    
+      
     
 
     public function Inserer() {
@@ -139,9 +141,6 @@ class Zone extends Polygone {
             return $zones;
         }
     }
-    
-    
-    
     
     
     public static function getById($cle) {

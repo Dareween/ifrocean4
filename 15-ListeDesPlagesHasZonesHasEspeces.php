@@ -1,5 +1,5 @@
 <?php
-include_once 'Ifrocean_BDD/ZoneHasEspece.php';
+include_once 'Ifrocean_BDD/PlagesHasZoneHasEspece.php';
 
 ?>
 
@@ -35,19 +35,16 @@ and open the template in the editor.
                 <th>Supprimer</th>
                 
             </tr>
-            <?php $zonehasespeces=ZoneHasEspece::getAllZonesHasEspeces();
-            foreach ($zonehasespeces as $zonehasespece){
+            <?php $plageshaszoneshasespeces=PlageHasZoneHasEspece::getAllPlagesHasZonesHasEspeces();
+            foreach ($plageshaszoneshasespeces as $plagehaszone){
             ?>
             <tr>
                
-                <td><?php echo $zonehasespece->nomplage ?></td>
-                 <td>Zone N°<?php echo $zonehasespece->zone_id ?></td>
-                 <td>Espece N°<?php echo $zonehasespece->espece_id ?></td>
-                <td>quantité<?php echo $zonehasespece->quantite ?></td>
-                <td>id zonehasespece<?php echo $zonehasespece->id_zhe ?>"></td>
-                <td><a href="14-VoirZoneHasEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Voir</a></td>
-                <td><a href="14-ModifierZoneEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Modifier</a></td>
-                <td><a href="14-SupprimerZoneHasEspece.php?id_zhe=<?php echo $zonehasespece->id_zhe ?>">Supprimer</a></td>
+                <td><?php echo $plagehaszone->palges_id ?></td>
+                 
+                <td><a href="15-VoirPlageHasZoneHasEspece.php?id=<?php echo $plagehaszone->id ?>">Voir</a></td>
+                <td><a href="15-ModifierPlageZoneEspece.php?id=<?php echo $plagehaszone->id ?>">Modifier</a></td>
+                <td><a href="15-SupprimerPlageZoneHasEspece.php?id=<?php echo $plagehaszone->id ?>">Supprimer</a></td>
             </tr> 
             
               <?php  

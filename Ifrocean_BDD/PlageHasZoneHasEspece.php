@@ -7,21 +7,23 @@ class PlageHasZoneHasEspece {
 
    
     public $plages_id;
-    public $plages_has_zones_has_especes;
+    public $zones_has_especes_zone_id;
     public $zones_has_especes_espece_id;
-    /*public $nomplage;
     public $nomespece;
-    public $quantite;*/
+    public $sumquantite;
    
     
 
 
-    public function __construct($plages_id, $plages_has_zones_has_especes, $zones_has_especes_espece_id) {
-        $this->plages_id = $plages_id;
-        $this->plages_has_zones_has_especes = $plages_has_zones_has_especes;
-        $this->zones_has_especes_espece_id = $zones_has_especes_espece_id;
+    public function __construct($nomespece, $sumquantite, $plages_id) {
+        $this->nomespece=$nomespece;
+        $this->sumquantite=$sumquantite;
+        $this->plage_id=$plages_id;
+        
+        /*$this->plages_id=$plages_id;
+        $this->zones_has_especes_zone_id=$zones_has_especes_zone_id;
+        $this->zones_has_especes_espece_id=$zones_has_especes_espece_id;*/
 
-     
     }
 
 
@@ -78,22 +80,26 @@ class PlageHasZoneHasEspece {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT zone_id, espece_id, quantite, nomplage FROM zones_has_especes, plages");
-        
+        $req = $pdo->prepare("SELECT DISTINCT nomespece, SUM(quantite) AS quantite, plages_id, zones_has_especes_zone_id, zones_has_especes_espece_id FROM 
+            plages_has_zones_has_especes, zones_has_especes, especes 
+            GROUP BY nomespece");
 
         $req->execute();
 
         if ($req->rowCount() >= 1) {
       
             while ($ligne = $req->fetch()) {
-                $plageshaszoneshasespeces[] = new PlageHasZoneHasEspece($ligne["$plages_id"], $ligne["$plages_has_zones_has_especes"], $ligne["$zones_has_especes_espece_id"] );
+                $plageshaszoneshasespeces[] = new PlageHasZoneHasEspece($ligne["nomespece"], $ligne["quantite"], $ligne["plage_id"]);
 
             }
           
             return $plageshaszoneshasespeces;
         }
     }
+    
+    
 
+    
     /* suite à metre à jour*/
     
     public static function getById($cle) {

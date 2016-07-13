@@ -3,7 +3,7 @@ include_once'Ifrocean_BDD/Point.php';
 include_once'Ifrocean_BDD/Polygone.php';
 include_once'Ifrocean_BDD/Triangle.php';
 include_once'Ifrocean_BDD/Zone.php';
-
+include_once'Ifrocean_BDD/PlageHasZoneHasEspece.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,9 @@ and open the template in the editor.
         $c=new Point(47,13, 02.20, 1, 33, 13.10);
         $d=new Point(47,13, 02.60, 1, 33, 13.30);
         
-        
+           $plages_id=1;
+           $zones_has_especes_zone_id=1;
+           $zones_has_especes_espece_id=1;
       
        echo"AB=".$a->calculerDistance($b);
        
@@ -51,7 +53,14 @@ and open the template in the editor.
         echo "Surface zone:".$zone->calculerSurface();
         
               echo "<br>";
-              
+          
+                
+              $phzhe=new PlageHasZoneHasEspece($plages_id, $zones_has_especes_zone_id, $zones_has_especes_espece_id);
+        echo "<br>";
+        echo ($phzhe->plages_id); 
+       
+        
+              echo "<br>";
           
        
               

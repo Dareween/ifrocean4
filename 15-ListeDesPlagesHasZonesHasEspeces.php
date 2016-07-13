@@ -1,5 +1,5 @@
 <?php
-include_once 'Ifrocean_BDD/PlagesHasZoneHasEspece.php';
+include_once 'Ifrocean_BDD/PlageHasZoneHasEspece.php';
 
 ?>
 
@@ -27,20 +27,29 @@ and open the template in the editor.
         <table class="table">
             <tr>
               
-                <th>Nom plage</th> 
-                  <th>Zone Id</th>
+                    <th>Plage id</th> 
+                <th>Nom espèce</th> 
+                  <th>Quantité par espèce</th>
                  <th>Nom de l'espèce</th>  
                 <th>Voir</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
                 
             </tr>
+            
             <?php $plageshaszoneshasespeces=PlageHasZoneHasEspece::getAllPlagesHasZonesHasEspeces();
+            
             foreach ($plageshaszoneshasespeces as $plagehaszone){
+                
             ?>
-            <tr>
                
-                <td><?php echo $plagehaszone->palges_id ?></td>
+            
+            <tr>
+            
+                <td><?php echo $plagehaszone->plages_id ?></td>
+                <td><?php echo $plagehaszone->nomespece ?></td>
+                <td><?php echo $plagehaszone->sumquantite ?></td>
+                <td><?php echo $plagehaszone->sumdensite ?></td>
                  
                 <td><a href="15-VoirPlageHasZoneHasEspece.php?id=<?php echo $plagehaszone->id ?>">Voir</a></td>
                 <td><a href="15-ModifierPlageZoneEspece.php?id=<?php echo $plagehaszone->id ?>">Modifier</a></td>

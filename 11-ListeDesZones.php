@@ -29,6 +29,7 @@ and open the template in the editor.
                 <th>Plages</th>
                 <th>Zones</th>
                 <th>Surface</th>
+               
                  <th>Latitude A</th>
                  <th>degrés</th>
                   <th>minutes</th>
@@ -76,6 +77,7 @@ and open the template in the editor.
                 <td> Plage N°<?php echo $zone->plage_id ?></td>
                 <td> Zone N°<?php echo $zone->id ?></td> 
                 <td><?php echo $zone->surface ?></td>
+                
                 
                 
                 <td>Lat A</td>

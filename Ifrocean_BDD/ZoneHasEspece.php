@@ -9,6 +9,7 @@ class ZoneHasEspece {
     public $id_zhe;
     public $quantite;
     public $zone_id;
+     public $plage_id;
     public $espece_id;
     public $densite_zone;
   
@@ -16,9 +17,10 @@ class ZoneHasEspece {
     
 
 
-    public function __construct($zone_id, $espece_id, $quantite, $cle = 0) {
+    public function __construct($zone_id, $espece_id, $plage_id, $quantite, $cle = 0) {
         $this->zone_id = $zone_id;
         $this->espece_id = $espece_id;
+        $this->plage_id = $plage_id;
         $this->quantite = $quantite;
         $this->id_zhe = $cle;
      
@@ -36,17 +38,21 @@ class ZoneHasEspece {
                     , Config::PASSWORD);
             
             
-                
+                echo($zone_has_espece->densite_zone);
             // pour éviter les injections sql
            
-          $req = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id, quantite, densite_zone) "
-                  . "VALUES (:zone_id,:espece_id,:quantite,:densite_zone);");
+          $req = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id, plage_id, quantite) "
+                  . "VALUES (:zone_id,:espece_id,:plage_id,:quantite);");
          /**/
+          
+         
           
            $req->bindParam(":espece_id", $this->espece_id);
             $req->bindParam(":zone_id", $this->zone_id);
+            $req->bindParam(":plage_id", $this->plage_id);
             $req->bindParam(":quantite", $this->quantite);
-              $req->bindParam(":densite_zone", $this->densite_zone);
+              /*$req->bindParam(":densite_zone", $this->densite_zone);*/
+              
             
            $req->execute();
             
@@ -83,7 +89,7 @@ class ZoneHasEspece {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT id_zhe, zone_id, espece_id, quantite FROM zones_has_especes");
+        $req = $pdo->prepare("SELECT id_zhe, zone_id, espece_id, plage_id, quantite, densite_zone FROM zones_has_especes");
         
         
         $req->execute();
@@ -92,7 +98,7 @@ class ZoneHasEspece {
         if ($req->rowCount() >= 1) {
       
             while ($ligne = $req->fetch()) {
-                $zoneshasespeces[] = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["quantite"], $ligne["id_zhe"] );
+                $zoneshasespeces[] = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], ["id_zhe"] );
                 
             }
           
@@ -120,7 +126,7 @@ class ZoneHasEspece {
             $ligne = $req->fetch();
 
          
-            $zonehasespece = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["quantite"], $ligne["id_zhe"]);
+            $zonehasespece = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["id_zhe"]);
 
 
             return $zonehasespece;

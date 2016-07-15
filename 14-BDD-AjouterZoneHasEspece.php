@@ -74,6 +74,24 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
                 <?php
             }
             ?>
+                
+                <h2>Sélectionner une plage</h2>
+                 
+                     <?php $plages=Plage::getAllPlages();
+            foreach ($plages as $plage){
+            ?>
+                
+                     <div class="radio">
+                    <label>
+                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
+                      <?php echo $plage->nomplage ?>
+                      <?php echo $plage->id ?>
+                    </label>
+                  </div>
+                     
+                <?php
+            }
+            ?>
        
                 <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
                 

@@ -23,14 +23,15 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Liste des prélevements</h1>
+        <h1>Total des individus par espèce par plage</h1>
         <table class="table">
             <tr>
               
-                    <th>Plage id</th> 
+                    <th>Plage id</th>
+                    <th>Zone id</th> 
                 <th>Nom espèce</th> 
                   <th>Quantité par espèce</th>
-                 <th>Nom de l'espèce</th>  
+                 <th>Densité par espèce</th>  
                 <th>Voir</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
@@ -47,6 +48,7 @@ and open the template in the editor.
             <tr>
             
                 <td><?php echo $plagehaszone->plages_id ?></td>
+                <td><?php echo $plagehaszone->zone_id ?></td>
                 <td><?php echo $plagehaszone->nomespece ?></td>
                 <td><?php echo $plagehaszone->sumquantite ?></td>
                 <td><?php echo $plagehaszone->sumdensite ?></td>

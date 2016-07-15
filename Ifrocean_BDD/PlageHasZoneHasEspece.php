@@ -6,7 +6,7 @@ include_once 'Config.php';
 class PlageHasZoneHasEspece {
 
    
-    public $plages_id;
+    public $zone_id;
     public $espece_id;
     public $zones_has_especes_zone_id;
     public $zones_has_especes_espece_id;
@@ -19,10 +19,10 @@ class PlageHasZoneHasEspece {
     
 
 
-    public function __construct($nomespece, $sumquantite, $plages_id) {
+    public function __construct($nomespece, $sumquantite, $sumdensite, $zone_id) {
         $this->nomespece=$nomespece;
         $this->sumquantite=$sumquantite;
-        $this->plage_id=$plages_id;
+        $this->zone_id=$zone_id;
         
         /*$this->plages_id=$plages_id;
         $this->zones_has_especes_zone_id=$zones_has_especes_zone_id;
@@ -84,19 +84,18 @@ class PlageHasZoneHasEspece {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT DISTINCT nomespece, SUM(quantite) AS quantite, plages_id, zones_has_especes_zone_id, zones_has_especes_espece_id FROM 
-            plages_has_zones_has_especes, zones_has_especes, especes 
-            GROUP BY nomespece");
+        $req = $pdo->prepare("SELECT nomespece, SUM(quantite) AS sumquantite, SUM(densite_zone) AS sumdensite, zone_id FROM zones_has_especes INNER join especes ON zones_has_especes.espece_id = especes.id GROUP BY nomespece");
+
 
         $req->execute();
 
         if ($req->rowCount() >= 1) {
       
             while ($ligne = $req->fetch()) {
-                $plageshaszoneshasespeces[] = new PlageHasZoneHasEspece($ligne["nomespece"], $ligne["quantite"], $ligne["plage_id"]);
-
+                $plageshaszoneshasespeces[] = new PlageHasZoneHasEspece($ligne["nomespece"], $ligne["sumquantite"], $ligne["sumdensite"], $ligne["zone_id"]);
+                    
             }
-          
+           
             return $plageshaszoneshasespeces;
         }
     }

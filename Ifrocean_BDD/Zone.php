@@ -123,7 +123,7 @@ class Zone extends Polygone {
                 . "latBdegre, latBmin, latBsec, longBdegre, longBmin, longBsec, "
                 . "latCdegre, latCmin, latCsec, longCdegre, longCmin, longCsec, "
                 . "latDdegre, latDmin, latDsec, longDdegre, longDmin, longDsec, "
-                . "couleur from zones");
+                . "couleur, surface from zones");
 
         $req->execute();
 

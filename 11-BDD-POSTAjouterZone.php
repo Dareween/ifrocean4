@@ -57,12 +57,12 @@ $zo = new Zone(
         new Point($degreLatB, $minuteLatB, $secondeLatB, $degreLongB, $minuteLongB, $secondeLongB),
         new Point($degreLatC, $minuteLatC, $secondeLatC, $degreLongC, $minuteLongC, $secondeLongC),
         new Point($degreLatD, $minuteLatD, $secondeLatD, $degreLongD, $minuteLongD, $secondeLongD),
-        $plage_id,
-        $couleur
+        $couleur,
+        $plage_id
         );
 
 $zo->surface=$zo->calculerSurface();
-
+/*echo ($zo->plage_id);*/
 //Enregistrer en BDD
 $zo->Inserer();
 

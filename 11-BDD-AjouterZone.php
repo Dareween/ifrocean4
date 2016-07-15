@@ -30,13 +30,26 @@ include_once 'Ifrocean_BDD/Plage.php';
                     ?>   
                 <div class="radio">
                     <label>
-                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->nomplage ?>" checked>
+                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
                       <?php echo $plage->nomplage ?>
+                      <?php echo $plage->ville ?>
+                      <?php echo $plage->id ?>
                     </label>
                   </div>
                   <?php  
                  }
                 ?>
+                <h2>Test Plage Id</h2>
+                <h3></h3>
+                <div class="form-group row">
+                    <label for="plage_id" class="col-sm-2
+                           form-control-label">plage_id</label>
+                    <div class="col-sm-4">
+                        <input type="number" step="1" required
+                               min="0" max="500" name="plage_id" id="plage_id"
+                               class="form-control">
+                    </div>
+                </div>
                   
 
                 

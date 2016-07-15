@@ -54,5 +54,7 @@ and open the template in the editor.
             }
                 ?>
         </table>
+               <a href="12-BDD-AjouterPlage.php" class="btn btn-primary btn-lg active" role="button">Ajouter une autre plage</a>
+
     </body>
 </html>

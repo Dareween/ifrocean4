@@ -21,24 +21,23 @@ $espece=Espece::getById($id);
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Modifier une espèce</h1>
+       
+            
+            <div class="container">
+                
+            <h1>Modifier une espèce</h1>
     
                 
           
             
-            
-            <div class="container">
-                
-            <h1>Ajouter une espèce</h1>
             <hr>
             <form action="13-BDD-POSTModifierEspece.php"
                   method="post">
-                <h2>Espèce n°</h2>
-          
+               
                 <div class="form-group row">
                     <label for="id" class="col-sm-2
                            form-control-label">Id</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         
                         <input 
                             type="number" required
@@ -48,7 +47,7 @@ $espece=Espece::getById($id);
                     </div>
                     <label for="nomespece" class="col-sm-2
                            form-control-label">Nom de l'espèce</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         <input type="text" required
                                name="nomespece" id="nomespece" value="<?php echo($espece->nomespece) ?>"
                                class="form-control">
@@ -59,5 +58,9 @@ $espece=Espece::getById($id);
                 <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
                 
             </form>
+            
+                 <div class="col-sm-12"> <a href="13-ListeDesEspeces.php" class="col-sm-offset-6 btn btn-primary" role="button">Revenir à la liste</a>
+                </div>
+             
         </div>
 

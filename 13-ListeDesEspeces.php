@@ -48,5 +48,8 @@ and open the template in the editor.
             }
                 ?>
         </table>
-    </body>
+        
+
+        <a href="13-BDD-AjouterEspece.php" class="btn btn-primary btn-lg active" role="button">Enregistrer une autre espèce</a>
+</body>
 </html>

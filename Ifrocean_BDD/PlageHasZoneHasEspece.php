@@ -7,10 +7,14 @@ class PlageHasZoneHasEspece {
 
    
     public $plages_id;
+    public $espece_id;
     public $zones_has_especes_zone_id;
     public $zones_has_especes_espece_id;
     public $nomespece;
     public $sumquantite;
+    public $sumdensite;
+    public $extrapolation;
+    
    
     
 

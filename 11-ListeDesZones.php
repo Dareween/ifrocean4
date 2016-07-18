@@ -78,9 +78,7 @@ and open the template in the editor.
                 <td> Zone N°<?php echo $zone->id ?></td> 
                 <td><?php echo $zone->surface ?></td>
                 
-                
-                
-                <td>Lat A</td>
+               <td>Lat A</td>
                 <td><?php echo $zone->lesPoints[0]->degreLat ?>°</td>
                 <td> <?php echo $zone->lesPoints[0]->minuteLat ?>'</td>
                 <td> <?php echo $zone->lesPoints[0]->secondeLat ?>''</td>

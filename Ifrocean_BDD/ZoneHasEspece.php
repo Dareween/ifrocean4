@@ -9,7 +9,7 @@ class ZoneHasEspece {
     public $id_zhe;
     public $quantite;
     public $zone_id;
-     public $plage_id;
+    public $plage_id;
     public $espece_id;
     public $densite_zone;
   
@@ -26,7 +26,13 @@ class ZoneHasEspece {
      
     }
 
-
+ 
+     public function calculerDensite($surface, $quantite) {
+      $densite_zone=$quantite/$surface;
+       
+      return  $densite_zone;
+        
+    }
    
 
     public function Inserer() {
@@ -38,10 +44,10 @@ class ZoneHasEspece {
                     , Config::PASSWORD);
             
             
-                echo($zone_has_espece->densite_zone);
+                
             // pour éviter les injections sql
            
-          $req = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id, plage_id, quantite) "
+          $req = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id, plage_id, quantite, densite_zone) "
                   . "VALUES (:zone_id,:espece_id,:plage_id,:quantite);");
          /**/
           
@@ -51,7 +57,7 @@ class ZoneHasEspece {
             $req->bindParam(":zone_id", $this->zone_id);
             $req->bindParam(":plage_id", $this->plage_id);
             $req->bindParam(":quantite", $this->quantite);
-              /*$req->bindParam(":densite_zone", $this->densite_zone);*/
+             /*$req->bindParam(":densite_zone", $this->densite_zone);*/
               
             
            $req->execute();
@@ -68,12 +74,7 @@ class ZoneHasEspece {
     }
     
     
-    
-     public function calculerDensite($surface, $quantite) {
-      $densite=$quantite/$surface;
-       return  $densite;
-        
-    }
+   
     
     
     

@@ -58,7 +58,8 @@ $zo = new Zone(
         new Point($degreLatC, $minuteLatC, $secondeLatC, $degreLongC, $minuteLongC, $secondeLongC),
         new Point($degreLatD, $minuteLatD, $secondeLatD, $degreLongD, $minuteLongD, $secondeLongD),
         $couleur,
-        $plage_id
+        $plage_id,
+        $surface
         );
 
 $zo->surface=$zo->calculerSurface();

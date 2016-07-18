@@ -32,6 +32,7 @@ and open the template in the editor.
                  <th>Id de l'espèce</th>
                  <th>Nom de l'espèce</th> 
                  <th>Quantité</th>
+                 <th>Densité</th>
                 <th>Voir</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
@@ -47,6 +48,7 @@ and open the template in the editor.
                  <td>Espece N°<?php echo $zonehasespece->espece_id ?></td>
                  <td><?php echo $zonehasespece->nomespece ?></td>
                 <td><?php echo $zonehasespece->quantite ?></td>
+                <td><?php echo $zonehasespece->densite_zone ?></td>
                 
                 <td><a href="14-VoirZoneHasEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Voir</a></td>
                 <td><a href="14-ModifierZoneEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Modifier</a></td>

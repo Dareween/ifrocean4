@@ -28,13 +28,11 @@ and open the template in the editor.
             <tr>
               
                     <th>Plage id</th>
-                    <th>Zone id</th> 
-                <th>Nom espèce</th> 
-                  <th>Quantité par espèce</th>
-                 <th>Densité par espèce</th>  
-                <th>Voir</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
+        <th>Nom espèce</th> 
+                  <th>Total des individus par</br>espèce des zones prélevées</th>
+                 <th>Densité par espèce au m2</th>  
+                 <th>Extrapolation de la quantité </br>d'individus par espèce par plage</th>  
+        
                 
             </tr>
             
@@ -47,16 +45,12 @@ and open the template in the editor.
             
             <tr>
             
-                <td><?php echo $plagehaszone->plages_id ?></td>
-                <td><?php echo $plagehaszone->zone_id ?></td>
-                <td><?php echo $plagehaszone->nomespece ?></td>
+                <td><?php echo $plagehaszone->nomplage ?></td>
+              <td><?php echo $plagehaszone->nomespece ?></td>
                 <td><?php echo $plagehaszone->sumquantite ?></td>
                 <td><?php echo $plagehaszone->sumdensite ?></td>
-                 
-                <td><a href="15-VoirPlageHasZoneHasEspece.php?id=<?php echo $plagehaszone->id ?>">Voir</a></td>
-                <td><a href="15-ModifierPlageZoneEspece.php?id=<?php echo $plagehaszone->id ?>">Modifier</a></td>
-                <td><a href="15-SupprimerPlageZoneHasEspece.php?id=<?php echo $plagehaszone->id ?>">Supprimer</a></td>
-            </tr> 
+                <td><?php echo $plagehaszone->extrapolation ?></td>
+              </tr>
             
               <?php  
             }

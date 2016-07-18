@@ -10,10 +10,11 @@ class Zone extends Polygone {
     public $plage_id;
 
 
-    public function __construct($p1, $p2, $p3, $p4, $couleur, $plage_id, $cle = 0) {
+    public function __construct($p1, $p2, $p3, $p4, $couleur, $plage_id, $cle = 0, $surface) {
         $desPoints = array($p1, $p2, $p3, $p4);
         $this->id = $cle;
         $this->plage_id = $plage_id;
+        $this->surface = $surface;
        parent::__construct($desPoints, $couleur);
         
     }
@@ -135,8 +136,8 @@ class Zone extends Polygone {
                 $p2 = new Point($ligne["latBdegre"], $ligne["latBmin"], $ligne["latBsec"], $ligne["longBdegre"], $ligne["longBmin"], $ligne["longBsec"]);
                 $p3 = new Point($ligne["latCdegre"], $ligne["latCmin"], $ligne["latCsec"], $ligne["longCdegre"], $ligne["longCmin"], $ligne["longCsec"]);
                 $p4 = new Point($ligne["latDdegre"], $ligne["latDmin"], $ligne["latDsec"], $ligne["longDdegre"], $ligne["longDmin"], $ligne["longDsec"]);
-                $zones[] = new Zone($p1, $p2, $p3, $p4, $ligne["couleur"], $ligne["plage_id"], $ligne["id"]);
-  
+                $zones[] = new Zone($p1, $p2, $p3, $p4, $ligne["couleur"], $ligne["plage_id"], $ligne["id"], $ligne["surface"]);
+                
             }
             return $zones;
         }

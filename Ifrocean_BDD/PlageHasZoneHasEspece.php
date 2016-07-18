@@ -6,23 +6,25 @@ include_once 'Config.php';
 class PlageHasZoneHasEspece {
 
    
-    public $zone_id;
+    public $nomplage;
     public $espece_id;
-    public $zones_has_especes_zone_id;
-    public $zones_has_especes_espece_id;
     public $nomespece;
     public $sumquantite;
     public $sumdensite;
     public $extrapolation;
     
+    /*public $zones_has_especes_zone_id;
+    public $zones_has_especes_espece_id;*/
+    
    
     
 
 
-    public function __construct($nomespece, $sumquantite, $sumdensite, $zone_id) {
+    public function __construct($nomespece, $sumquantite, $sumdensite, $nomplage) {
         $this->nomespece=$nomespece;
         $this->sumquantite=$sumquantite;
-        $this->zone_id=$zone_id;
+         $this->sumdensite=$sumdensite;
+        $this->nomplage=$nomplage;
         
         /*$this->plages_id=$plages_id;
         $this->zones_has_especes_zone_id=$zones_has_especes_zone_id;
@@ -84,7 +86,14 @@ class PlageHasZoneHasEspece {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT nomespece, SUM(quantite) AS sumquantite, SUM(densite_zone) AS sumdensite, zone_id FROM zones_has_especes INNER join especes ON zones_has_especes.espece_id = especes.id GROUP BY nomespece");
+        $req = $pdo->prepare("SELECT nomplage, nomespece, SUM(quantite) AS sumquantite, "
+                . "SUM(densite_zone) AS sumdensite "
+                . "FROM zones,zones_has_especes,plages,especes "
+                . "WHERE zones_has_especes.espece_id=especes.id "
+                . "AND zones_has_especes.plage_id=plages.id "
+                . "AND zones_has_especes.zone_id=zones.id "
+                . "GROUP BY nomespece "
+                . "ORDER BY zones_has_especes.plage_id");
 
 
         $req->execute();
@@ -92,7 +101,7 @@ class PlageHasZoneHasEspece {
         if ($req->rowCount() >= 1) {
       
             while ($ligne = $req->fetch()) {
-                $plageshaszoneshasespeces[] = new PlageHasZoneHasEspece($ligne["nomespece"], $ligne["sumquantite"], $ligne["sumdensite"], $ligne["zone_id"]);
+                $plageshaszoneshasespeces[] = new PlageHasZoneHasEspece($ligne["nomespece"], $ligne["sumquantite"], $ligne["sumdensite"], $ligne["nomplage"]);
                     
             }
            

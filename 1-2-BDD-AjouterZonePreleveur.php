@@ -18,6 +18,16 @@ include_once 'Ifrocean_BDD/Plage.php';
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+        <header>
+            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
+                <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
+                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonées zone</a></li>
+</ol>
+        </header>
+        
      <div class="container">
             <h1>Ajouter une zone</h1>
             <hr>
@@ -37,10 +47,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                   <?php  
                  }
                 ?>
-               
-                  
-
-                
+              
                 <h2>Point A</h2>
                 <h3>Latitude Point A</h3>
                 <div class="form-group row">
@@ -285,7 +292,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                          
         
        
-                 <a href="14-BDD-AjouterZoneHasEspece.php" <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer"></a>
+                <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
                 
             </form>
         </div>

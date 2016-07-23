@@ -23,6 +23,17 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+        <header>
+            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
+                <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
+                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonées zone</a></li>
+                <li><a href="1-3-ListeDesZonesPreveleur.php">Liste zone</a></li>
+</ol>
+        </header>
+        
         <h1>Liste des zones</h1>
         <table class="table">
             <tr>

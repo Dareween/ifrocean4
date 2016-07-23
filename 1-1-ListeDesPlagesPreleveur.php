@@ -13,7 +13,7 @@ and open the template in the editor.
 <html>
    <head>
         <meta charset="UTF-8">
-        <title>Liste des plages</title>
+        <title>Sélectionner une plage</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -24,13 +24,13 @@ and open the template in the editor.
     </head>
     <body>
             <header>
-            <div class="bandeau1">Projet Ifrocean</div>
+            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
             <ol class="breadcrumb">
-                <li><a href="0-0indexAccueil.php">Accueil</a></li>
-                <li><a href="1-1-ListeDesPlagesPreleveur.php">Création et Consultation</a></li>
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
 </ol>
         </header>
-        <h1>Liste des plages</h1>
+        <h1>Sélectionner une plage</h1>
         <table class="table">
             <tr>
                 

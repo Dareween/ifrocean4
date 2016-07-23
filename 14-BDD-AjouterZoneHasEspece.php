@@ -23,11 +23,44 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+             <header>
+            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
+                <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
+                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonées zone</a></li>
+                <li><a href="1-3-ListeDesZonesPreveleur.php">Liste zone</a></li>
+                <li><a href="14-BDD-AjouterZoneHasEspece.php">Nombre d'individus</a></li>
+</ol>
+        </header>
+        
      <div class="container">
             <h1>Nouveau prélevement</h1>
             <hr>
             <form action="14-BDD-POSTAjouterZoneHasEspece.php"
                   method="post">
+                
+                <h2>Sélectionner une espèce</h2>
+                 
+                     <?php $especes=Espece::getAllEspeces();
+            foreach ($especes as $espece){
+            ?>
+                
+                     <div class="radio">
+                    <label>
+                      <input type="radio" name="espece_id" id='espece_id' value="<?php echo $espece->id ?>" checked>
+                      <?php echo $espece->nomespece ?>
+                    </label>
+                  </div>
+                
+               
+                     
+                <?php
+            }
+            ?>
+                <a href="13-ListeDesEspeces.php" class="btn btn-primary btn-lg active" role="button">Ajouter ou Modifier</a>
+                
                 <h2>Quantité</h2>
           
                 <div class="form-group row">
@@ -39,6 +72,8 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
                                class="form-control">
                     </div>
                 </div>
+                
+                
                 <h2>Sélectionner une zone</h2>
             
                      
@@ -58,22 +93,7 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
             ?>
                 
                 
-                <h2>Sélectionner une espèce</h2>
-                 
-                     <?php $especes=Espece::getAllEspeces();
-            foreach ($especes as $espece){
-            ?>
                 
-                     <div class="radio">
-                    <label>
-                      <input type="radio" name="espece_id" id='espece_id' value="<?php echo $espece->id ?>" checked>
-                      Nom de l'espèce <?php echo $espece->nomespece ?>
-                    </label>
-                  </div>
-                     
-                <?php
-            }
-            ?>
                 
                 <h2>Sélectionner une plage</h2>
                  

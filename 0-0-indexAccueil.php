@@ -32,7 +32,7 @@
    <!-- <div class="col-md-6 col-sm-12 col-lg-20"-->
         
         
-<a href="index.html"><button type="button" class="btn btn-danger btn-block">CHERCHEUR</button></a>
+   <a href="0-1-ChoixDesActions.php"><button type="button" class="btn btn-danger btn-block">CHERCHEUR</button></a>
 
 <br>
 

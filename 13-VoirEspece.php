@@ -36,7 +36,7 @@ $espece=Espece::getById($id);
             
             <tr>
                     <td>Espèce n°<?php echo($espece->id); ?></td>
-                    <td>Nom : <?php echo($espece->nomespece); ?></td>
+                    <td><?php echo($espece->nomespece); ?></td>
                 
                 <td><a href="13-ModifierEspece.php?id=<?php echo $espece->id ?>">Modifier</a></td>
                 <td><a href="13-SupprimerEspece.php?id=<?php echo $espece->id ?>">Supprimer</a></td>

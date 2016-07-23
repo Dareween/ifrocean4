@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-test
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,6 +12,14 @@ test
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+           <header>
+            <div class="bandeau1">Projet Ifrocean - Chercheur</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="0-1-ChoixDesActions.php">Actions Chercheurs</a></li>
+               
+</ol>
+        </header>
      <div class="container">
             <h1>Ajouter une plage</h1>
             <hr>

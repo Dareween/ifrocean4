@@ -23,6 +23,10 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+         <header>
+            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+        
+        </header>
         <h1>Liste des espèces</h1>
         <table class="table">
             <tr>
@@ -51,5 +55,6 @@ and open the template in the editor.
         
 
         <a href="13-BDD-AjouterEspece.php" class="btn btn-primary btn-lg active" role="button">Enregistrer une autre espèce</a>
+        <a href="14-BDD-AjouterZoneHasEspece.php" class="btn btn-primary btn-lg active" role="button">Retour</a>
 </body>
 </html>

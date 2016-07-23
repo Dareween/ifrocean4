@@ -14,7 +14,7 @@ s
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Nouveau prélevement</title>
+        <title>Nouveau prélèvement</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -25,7 +25,7 @@ s
     </head>
     <body>
      <div class="container">
-            <h1>Nouveau prélevement</h1>
+            <h1>Nouveau prélèvement</h1>
             <hr>
             <form action="15-BDD-POSTAjouterPlagesHasZoneHasEspece.php"
                   method="post">

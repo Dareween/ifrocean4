@@ -23,17 +23,22 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+            <header>
+            <div class="bandeau1">Projet Ifrocean</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0indexAccueil.php">Accueil</a></li>
+                <li><a href="1-1-ListeDesPlagesPreleveur.php">Création et Consultation</a></li>
+</ol>
+        </header>
         <h1>Liste des plages</h1>
         <table class="table">
             <tr>
                 
-                 <th>Nom de la plage</th>  
+                <th>Nom de la plage</th>  
                 <th>Superficie</th>
                 <th>Ville</th>
                 <th>Date de prélevement</th>
-                <th>Voir</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
+               
                 
             </tr>
             <?php $plages=Plage::getAllPlages();
@@ -46,16 +51,17 @@ and open the template in the editor.
                 <td><?php echo $plage->ville ?></td>
                 <td><?php echo $plage->date_prelevement ?></td>
                 <td><?php echo $plage->id ?></td>
-                <td><a href="12-VoirPlage.php?id=<?php echo $plage->id ?>">Voir</a></td>
-                <td><a href="12-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a></td>
-                <td><a href="10-SupprimerPlage.php?id=<?php echo $plage->id ?>">Supprimer</a></td>
+                
             </tr> 
             
               <?php  
             }
                 ?>
         </table>
-               <a href="12-BDD-AjouterPlage.php" class="btn btn-primary btn-lg active" role="button">Ajouter une autre plage</a>
+               
 
+               
+        <a href="1-10-ChoixDesActions.php"><button type="submit" class="btn btn-default">Sélectionner</button></a>
+            
     </body>
 </html>

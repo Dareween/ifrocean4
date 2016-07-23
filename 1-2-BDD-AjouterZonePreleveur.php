@@ -285,7 +285,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                          
         
        
-                <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
+                 <a href="14-BDD-AjouterZoneHasEspece.php" <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer"></a>
                 
             </form>
         </div>

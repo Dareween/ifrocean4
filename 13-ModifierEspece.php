@@ -55,7 +55,7 @@ $espece=Espece::getById($id);
                 </div>
       
        
-                <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
+                <input class="col-sm-offset-6 btn btn-success" type="submit" value="Enregistrer l'espèce">
                 
             </form>
             

@@ -47,10 +47,10 @@ class ZoneHasEspece {
                 
             // pour éviter les injections sql
            
-          $req = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id, plage_id, quantite, densite_zone) "
+          $req = $pdo->prepare("INSERT INTO zones_has_especes(zone_id, espece_id, plage_id, quantite) "
                   . "VALUES (:zone_id,:espece_id,:plage_id,:quantite);");
          /**/
-          
+         
          
           
            $req->bindParam(":espece_id", $this->espece_id);

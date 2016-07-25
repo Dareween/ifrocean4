@@ -11,7 +11,7 @@ include_once 'Ifrocean_BDD/Plage.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ajouter une espece</title>
+        <title>Ajouter une espèce</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -22,7 +22,7 @@ include_once 'Ifrocean_BDD/Plage.php';
     </head>
     <body>
             <header>
-            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <div class="bandeau1">Projet Ifrocean - Préleveur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
@@ -42,7 +42,7 @@ include_once 'Ifrocean_BDD/Plage.php';
           
                 <div class="form-group row">
                     <label for="nomespece" class="col-sm-2
-                           form-control-label">Nom espèce</label>
+                           form-control-label">Nom de l'espèce</label>
                     <div class="col-sm-4">
                         <input type="text" required
                                name="nomespece" id="nomespece"
@@ -51,7 +51,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
       
        
-                <a href="14-BDD-AjouterZoneHasEspece.php"><input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer"></a>
+                <a href="14-BDD-AjouterZoneHasEspece.php"><input class="col-sm-offset-6 btn btn-success" type="submit" value="Enregistrer l'espèce"></a>
                 
                 
             </form>

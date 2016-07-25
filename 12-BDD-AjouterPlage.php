@@ -16,7 +16,7 @@
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
-                <li><a href="0-1-ChoixDesActions.php">Actions Chercheurs</a></li>
+                <li><a href="0-1-ChoixDesActions.php">Actions Chercheur</a></li>
                
 </ol>
         </header>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="date_prelevement" class="col-sm-2
-                           form-control-label">Date du prélevement</label>
+                           form-control-label">Date du prélèvement</label>
                     <div class="col-sm-4">
                         <input type="date" required
                                name="date_prelevement" id="date_prelevement"

@@ -19,7 +19,7 @@
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
-                <li><a href="0-1-ChoixDesActions.php">Actions Chercheurs</a></li>
+                <li><a href="0-1-ChoixDesActions.php">Actions Chercheur</a></li>
                
 </ol>
         </header>
@@ -35,16 +35,16 @@
                <h1>Sélectionner une action liée à la zone</h1>
             <hr>
             
-              <a href="11-ListeDesZones.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les zones</a>
+              <a href="11-ListeDesZones.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les zones</a>
               
               </br>
               </br>
              
-              <a href="13-ListeDesEspeces.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les espèces</a>
+              <a href="13-ListeDesEspeces.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les espèces</a>
               </br>
               </br>
-              <a href="14-BDD-AjouterZoneHasEspece.php" class="btn btn-primary btn-lg active" role="button">Ajouter un prélevement</a>
-              <a href="14-ListeDesZonesHasEspeces.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les prélevements</a>
+              <a href="14-BDD-AjouterZoneHasEspece.php" class="btn btn-success btn-lg active" role="button">Ajouter un prélevement</a>
+              <a href="14-ListeDesZonesHasEspeces.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les prélevements</a>
                <br>
                </br>
                

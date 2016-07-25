@@ -24,7 +24,7 @@ and open the template in the editor.
     </head>
     <body>
             <header>
-            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <div class="bandeau1">Projet Ifrocean - Préleveur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
@@ -61,7 +61,7 @@ and open the template in the editor.
                
 
                
-        <a href="1-10-ChoixDesActions.php"><button type="submit" class="btn btn-default">Sélectionner</button></a>
+        <a href="1-10-ChoixDesActions.php"><button type="submit" class="btn btn-warning btn-block">Sélectionner</button></a>
             
     </body>
 </html>

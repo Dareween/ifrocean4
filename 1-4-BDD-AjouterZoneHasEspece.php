@@ -24,19 +24,19 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
     </head>
     <body>
              <header>
-            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <div class="bandeau1">Projet Ifrocean - Préleveur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
                 <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
-                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonées zone</a></li>
-                <li><a href="1-3-ListeDesZonesPreveleur.php">Liste zone</a></li>
+                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonnées zone</a></li>
+                <li><a href="1-3-ListeDesZonesPreveleur.php">Liste zones</a></li>
                 <li><a href="14-BDD-AjouterZoneHasEspece.php">Nombre d'individus</a></li>
 </ol>
         </header>
         
      <div class="container">
-            <h1>Nouveau prélevement</h1>
+            <h1>Nouveau prélèvement</h1>
             <hr>
             <form action="14-BDD-POSTAjouterZoneHasEspece.php"
                   method="post">
@@ -72,29 +72,7 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
                                class="form-control">
                     </div>
                 </div>
-                
-                
-                <h2>Sélectionner une zone</h2>
-            
-                     
-                     <?php $zones=Zone::getAllZones();
-            foreach ($zones as $zone){
-            ?>
-                 
-                     <div class="radio">
-                    <label>
-                      <input type="radio" name="zone_id" id='zone_id' value="<?php echo $zone->id ?>" checked>
-                      Zone n° <?php echo $zone->id ?>
-                    </label>
-                  </div>
-                     
-                <?php
-            }
-            ?>
-                
-                
-                
-                
+               
                 <h2>Sélectionner une plage</h2>
                  
                      <?php $plages=Plage::getAllPlages();
@@ -112,9 +90,32 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
                 <?php
             }
             ?>
-       
-                <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
+                <h2>Sélectionner une zone</h2>
+            
+                     
+                     <?php $zones=Zone::getAllZones();
+            foreach ($zones as $zone){
+            ?>
+                 
+                     <div class="radio">
+                    <label>
+                      <input type="radio" name="zone_id" id='zone_id' value="<?php echo $zone->id ?>" checked>
+                      Zone n° <?php echo $zone->id ?>
+                    </label>
+                  </div>
+                     
+                <?php
+            }
+            
                 
+                
+                
+                
+               
+            ?>
+       
+               <input class="btn btn-info btn-lg btn-block" type="submit" value="Enregistrer le prélèvement">
+               <br>
             </form>
         </div>
     </body>

@@ -8,7 +8,7 @@ include_once 'Ifrocean_BDD/Plage.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ajouter un zone</title>
+        <title>Ajouter une zone</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -19,12 +19,12 @@ include_once 'Ifrocean_BDD/Plage.php';
     </head>
     <body>
         <header>
-            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <div class="bandeau1">Projet Ifrocean - Préleveur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
                 <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
-                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonées zone</a></li>
+                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonnées zone</a></li>
 </ol>
         </header>
         
@@ -49,10 +49,10 @@ include_once 'Ifrocean_BDD/Plage.php';
                 ?>
               
                 <h2>Point A</h2>
-                <h3>Latitude Point A</h3>
+                <h3>Latitude A</h3>
                 <div class="form-group row">
                     <label for="latAdegre" class="col-sm-2
-                           form-control-label">latAdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latAdegre" id="latAdegre"
@@ -61,7 +61,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="latAmin" class="col-sm-2
-                           form-control-label">latAmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latAmin" id="latAmin"
@@ -71,17 +71,17 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="latAsec" class="col-sm-2
-                           form-control-label">latAsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="latAsec" id="latAsec"
                                class="form-control">
                     </div>
                 </div>
-                 <h3>Longitude Point A</h3>
+                 <h3>Longitude A</h3>
                    <div class="form-group row">
                     <label for="longAdegre" class="col-sm-2
-                           form-control-label">longAdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longAdegre" id="longAdegre"
@@ -90,7 +90,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="longAmin" class="col-sm-2
-                           form-control-label">longAmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longAmin" id="longAmin"
@@ -100,7 +100,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="longAsec" class="col-sm-2
-                           form-control-label">longAsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="longAsec" id="longAsec"
@@ -110,10 +110,10 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                
                 <h2>Point B</h2>
-                <h3>Latitude Point B</h3>
+                <h3>Latitude B</h3>
                 <div class="form-group row">
                     <label for="latBdegre" class="col-sm-2
-                           form-control-label">latBdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latBdegre" id="latBdegre"
@@ -122,7 +122,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="latBmin" class="col-sm-2
-                           form-control-label">latBmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latBmin" id="latBmin"
@@ -132,17 +132,17 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="latBsec" class="col-sm-2
-                           form-control-label">latBsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01"  name="latBsec" id="latBsec"
                                class="form-control">
                     </div>
                 </div>
-                 <h3>Longitude Point B</h3>
+                 <h3>Longitude B</h3>
                    <div class="form-group row">
                     <label for="longBdegre" class="col-sm-2
-                           form-control-label">longBdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longBdegre" id="longBdegre"
@@ -151,7 +151,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="longBmin" class="col-sm-2
-                           form-control-label">longBmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longBmin" id="longBmin"
@@ -161,7 +161,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="longBsec" class="col-sm-2
-                           form-control-label">longBsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01"  name="longBsec" id="longBsec"
@@ -170,10 +170,10 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                  
                 <h2>Point C</h2>
-                <h3>Latitude Point C</h3>
+                <h3>Latitude C</h3>
                 <div class="form-group row">
                     <label for="latAdegre" class="col-sm-2
-                           form-control-label">latCdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latCdegre" id="latCdegre"
@@ -182,7 +182,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="latCmin" class="col-sm-2
-                           form-control-label">latCmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latCmin" id="latCmin"
@@ -192,17 +192,17 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="latCsec" class="col-sm-2
-                           form-control-label">latCsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="latCsec" id="latCsec"
                                class="form-control">
                     </div>
                 </div>
-                 <h3>Longitude Point C</h3>
+                 <h3>Longitude C</h3>
                    <div class="form-group row">
                     <label for="longCdegre" class="col-sm-2
-                           form-control-label">longCdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longCdegre" id="longCdegre"
@@ -211,7 +211,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="longCmin" class="col-sm-2
-                           form-control-label">longCmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longCmin" id="longCmin"
@@ -221,7 +221,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="longCsec" class="col-sm-2
-                           form-control-label">longCsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="longCsec" id="longCsec"
@@ -231,10 +231,10 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                
                 <h2>Point D</h2>
-                <h3>Latitude Point D</h3>
+                <h3>Latitude D</h3>
                 <div class="form-group row">
                     <label for="latBDegre" class="col-sm-2
-                           form-control-label">latDdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latDdegre" id="latDdegre"
@@ -243,7 +243,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="latDmin" class="col-sm-2
-                           form-control-label">latDmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latDmin" id="latDmin"
@@ -253,17 +253,17 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="latDsec" class="col-sm-2
-                           form-control-label">latDsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01"  name="latDsec" id="latDsec"
                                class="form-control">
                     </div>
                 </div>
-                 <h3>Longitude Point D</h3>
+                 <h3>Longitude D</h3>
                    <div class="form-group row">
                     <label for="longDdegre" class="col-sm-2
-                           form-control-label">longDdegre</label>
+                           form-control-label">Degrés</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longDdegre" id="longDdegre"
@@ -272,7 +272,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 </div>
                 <div class="form-group row">
                     <label for="longDmin" class="col-sm-2
-                           form-control-label">longDmin</label>
+                           form-control-label">Minutes</label>
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longDmin" id="longDmin"
@@ -282,7 +282,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                 
                   <div class="form-group row">
                     <label for="longDsec" class="col-sm-2
-                           form-control-label">longDsec</label>
+                           form-control-label">Secondes</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="longDsec" id="longDsec"
@@ -292,7 +292,8 @@ include_once 'Ifrocean_BDD/Plage.php';
                          
         
        
-                <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
+                <input class="btn btn-info btn-lg btn-block" type="submit" value="Enregistrer la zone">
+                <br>
                 
             </form>
         </div>

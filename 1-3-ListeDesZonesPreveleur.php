@@ -24,13 +24,13 @@ and open the template in the editor.
     </head>
     <body>
         <header>
-            <div class="bandeau1">Projet Ifrocean - Préléveur</div>
+            <div class="bandeau1">Projet Ifrocean - Préleveur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
                 <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
                 <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonnées zone</a></li>
-                <li><a href="1-3-ListeDesZonesPreveleur.php">Liste zone</a></li>
+                <li><a href="1-3-ListeDesZonesPreveleur.php">Liste zones</a></li>
 </ol>
         </header>
         
@@ -41,38 +41,38 @@ and open the template in the editor.
                 <th>Zones</th>
                 <th>Surface</th>
                
-                 <th>Latitude A</th>
-                 <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
-                  <th>Longitude A</th>
-                   <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
-                  <th>Latitude B</th>
-                 <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
-                  <th>Longitude B</th>
-                   <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
-                   <th>Latitude C</th>
-                 <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
-                  <th>Longitude C</th>
-                   <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
-                   <th>Latitude D</th>
-                 <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
-                  <th>Longitude D</th>
-                   <th>degrés</th>
-                  <th>minutes</th>
-                  <th>secondes</th>
+                 <th>LatA</th>
+                 <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
+                  <th>LongA</th>
+                   <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
+                  <th>LatB</th>
+                 <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
+                  <th>LongB</th>
+                   <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
+                   <th>LatC</th>
+                 <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
+                  <th>LongC</th>
+                   <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
+                   <th>LatD</th>
+                 <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
+                  <th>LongD</th>
+                   <th>D</th>
+                  <th>M</th>
+                  <th>S</th>
                     
                     
                 <th>Voir</th>
@@ -85,8 +85,8 @@ and open the template in the editor.
             foreach ($zones as $zone){
             ?>
             <tr>
-                <td> Plage N°<?php echo $zone->plage_id ?></td>
-                <td> Zone N°<?php echo $zone->id ?></td> 
+                <td> N°<?php echo $zone->plage_id ?></td>
+                <td> N°<?php echo $zone->id ?></td> 
                 <td><?php echo $zone->surface ?></td>
                 
                <td>Lat A</td>

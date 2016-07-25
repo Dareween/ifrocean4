@@ -59,7 +59,7 @@ $espece=Espece::getById($id);
                 
             </form>
             
-                 <div class="col-sm-12"> <a href="13-ListeDesEspeces.php" class="col-sm-offset-6 btn btn-primary" role="button">Revenir à la liste</a>
+            <div class="col-sm-12"> <a href="1-7-ListeDesEspecesPreleveur.php" class="col-sm-offset-6 btn btn-primary" role="button">Revenir à la liste</a>
                 </div>
              
         </div>

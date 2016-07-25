@@ -22,5 +22,5 @@ $pla->Inserer();
 
 
 //renvoie vers une page
-header('location: 12-ListeDesPlages.php');
+header('location: 1-1-ListeDesPlagesPreleveur.php');
 

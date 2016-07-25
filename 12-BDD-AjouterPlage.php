@@ -26,10 +26,10 @@
             <form action="12-BDD-POSTAjouterPlage.php"
                   method="post">
                 <h2>Plage</h2>
-                <h3>Nom de la plage</h3>
+                <h3>Informations</h3>
                 <div class="form-group row">
                     <label for="nomplage" class="col-sm-2
-                           form-control-label">nomplage</label>
+                           form-control-label">Nom de la plage</label>
                     <div class="col-sm-4">
                         <input type="text" required
                                name="nomplage" id="nomplage"
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="ville" class="col-sm-2
-                           form-control-label">ville</label>
+                           form-control-label">Ville</label>
                     <div class="col-sm-4">
                         <input type="text" required
                                name="ville" id="ville"
@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="superficie" class="col-sm-2
-                           form-control-label">superficie</label>
+                           form-control-label">Superficie</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                name="superficie" id="superficie"
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="date_prelevement" class="col-sm-2
-                           form-control-label">date de prélevement</label>
+                           form-control-label">Date du prélevement</label>
                     <div class="col-sm-4">
                         <input type="date" required
                                name="date_prelevement" id="date_prelevement"
@@ -64,7 +64,8 @@
                     </div>
                 </div>
        
-                <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
+                  <a href="1-1-ListeDesPlagesPreleveur.php"><input class="btn btn-success btn-block" type="submit" value="Enregistrer la plage">
+              </a>
                 
             </form>
             

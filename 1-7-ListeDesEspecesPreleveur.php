@@ -40,8 +40,8 @@ and open the template in the editor.
                 <td>Espece N°<?php echo $espece->id ?></td>
                 <td><?php echo $espece->nomespece ?></td>
           
-                <td><a href="13-ModifierEspece.php?id=<?php echo $espece->id ?>">Modifier</a></td>
-                <td><a href="13-SupprimerEspece.php?id=<?php echo $espece->id ?>">Supprimer</a></td>
+                <td><a href="1-6-ModifierEspecePreleveur.php?id=<?php echo $espece->id ?>">Modifier</a></td>
+                <td><a href="1-7-SupprimerEspece.php?id=<?php echo $espece->id ?>">Supprimer</a></td>
             </tr> 
             
               <?php  
@@ -50,6 +50,6 @@ and open the template in the editor.
         </table>
         
 
-        <a href="13-BDD-AjouterEspece.php" class="btn btn-info btn-block btn-lg" role="button">Ajouter une nouvelle espèce</a>
+        <a href="1-5-BDD-AjouterEspecePreleveur.php" class="btn btn-info btn-block btn-lg" role="button">Ajouter une nouvelle espèce</a>
 </body>
 </html>

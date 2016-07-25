@@ -29,7 +29,7 @@ and open the template in the editor.
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
                 <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
-                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonées zone</a></li>
+                <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonnées zone</a></li>
                 <li><a href="1-3-ListeDesZonesPreveleur.php">Liste zone</a></li>
 </ol>
         </header>

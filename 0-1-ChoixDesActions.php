@@ -28,11 +28,11 @@
             <hr>
              <a href="12-BDD-AjouterPlage.php" class="btn btn-primary btn-lg active" role="button">Ajouter une plage</a>
              <a href="12-ListeDesPlages.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les plages</a>
-             <a href="15-ListeDesPlagesHasZonesHasEspeces.php" class="btn btn-primary btn-lg active" role="button">Voir les espèces par plages</a>
+             <a href="15-ListeDesPlagesHasZonesHasEspeces.php" class="btn btn-primary btn-lg active" role="button">Voir les espèces par plage</a>
                </br>
               </br>
               
-               <h1>Sélectionner une action liée au préléveur</h1>
+               <h1>Sélectionner une action liée à la zone</h1>
             <hr>
             
               <a href="11-ListeDesZones.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les zones</a>

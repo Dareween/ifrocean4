@@ -89,7 +89,7 @@ class Plage {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("select id, xa, ya, xb, yb, xc, yc, xd, yd, couleur from zones"
+        $req = $pdo->prepare("select id, nomplage from plages"
                 . " where id=:cle");
 
         
@@ -97,15 +97,13 @@ class Plage {
         
         $req->execute();
         if ($req->rowCount() == 1) {
-            $ligne = $req->fetch();
+          while  ($ligne = $req->fetch());
 
-            $p1 = new Point($ligne["xa"], $ligne["ya"]);
-            $p2 = new Point($ligne["xb"], $ligne["yb"]);
-            $p3 = new Point($ligne["xc"], $ligne["yc"]);
-            $p4 = new Point($ligne["xd"], $ligne["yd"]);
-            $zone = new Zone($p1, $p2, $p3, $p4, $ligne["couleur"], $ligne["id"]);
+            
+        $plage = new Plage($ligne["nomplage"], $ligne["superficie"], $ligne["ville"], $ligne["date_prelevement"]);
+       
 
-            return $zone;
+            return $plage;
         } else {
             return null;
         }

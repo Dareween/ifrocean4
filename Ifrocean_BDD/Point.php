@@ -24,8 +24,8 @@ class Point {
         $this->degreLong = $degreLong;
         $this->minuteLong = $minuteLong;
         $this->secondeLong = $secondeLong;
-        $this->latitudeNumerique = $degreLat+($minuteLat/60)+($secondeLat/3600);
-        $this->longitudeNumerique = $degreLong+($minuteLong/60)+($secondeLong/3600);
+        $this->latitudeNumerique = 1*($degreLat+($minuteLat/60)+($secondeLat/3600));
+        $this->longitudeNumerique = 1*($degreLong+($minuteLong/60)+($secondeLong/3600));
         
     }
         

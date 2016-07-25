@@ -36,14 +36,14 @@ $espece=Espece::getById($id);
                
                 <div class="form-group row">
                     <label for="id" class="col-sm-2
-                           form-control-label">Id</label>
-                    <div class="col-sm-2">
+                           form-control-label"></label>
+                    <div class="col-sm-0">
                         
                         <input 
-                            type="number" required
+                            type="hidden" required
                                name="id" id="disabledInput" value="<?php echo($espece->id) ?>"
                                class="form-control">
-                        <span>Merci de ne pas modifier la valeur de l'id</span>
+                      
                     </div>
                     <label for="nomespece" class="col-sm-2
                            form-control-label">Nom de l'espèce</label>

@@ -10,6 +10,8 @@ class Config {
    
 } 
 
+//test
+
 /*class Config {
     const SERVERNAME = "localhost";
     const DBNAME = "base_fayss";

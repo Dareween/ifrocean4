@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-test
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,16 +12,24 @@ test
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+         <header>
+            <div class="bandeau1">Projet Ifrocean - Chercheur</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="0-1-ChoixDesActions.php">Actions Chercheur</a></li>
+               
+</ol>
+        </header>
      <div class="container">
             <h1>Ajouter une plage</h1>
             <hr>
             <form action="12-BDD-POSTAjouterPlage.php"
                   method="post">
                 <h2>Plage</h2>
-                <h3>Nom de la plage</h3>
+                <h3>Informations</h3>
                 <div class="form-group row">
                     <label for="nomplage" class="col-sm-2
-                           form-control-label">nomplage</label>
+                           form-control-label">Nom de la plage</label>
                     <div class="col-sm-4">
                         <input type="text" required
                                name="nomplage" id="nomplage"
@@ -31,7 +38,7 @@ test
                 </div>
                 <div class="form-group row">
                     <label for="ville" class="col-sm-2
-                           form-control-label">ville</label>
+                           form-control-label">Ville</label>
                     <div class="col-sm-4">
                         <input type="text" required
                                name="ville" id="ville"
@@ -40,7 +47,7 @@ test
                 </div>
                 <div class="form-group row">
                     <label for="superficie" class="col-sm-2
-                           form-control-label">superficie</label>
+                           form-control-label">Superficie</label>
                     <div class="col-sm-4">
                         <input type="number" required
                                name="superficie" id="superficie"
@@ -49,7 +56,7 @@ test
                 </div>
                 <div class="form-group row">
                     <label for="date_prelevement" class="col-sm-2
-                           form-control-label">date de prélevement</label>
+                           form-control-label">Date de prélevement</label>
                     <div class="col-sm-4">
                         <input type="date" required
                                name="date_prelevement" id="date_prelevement"
@@ -57,7 +64,7 @@ test
                     </div>
                 </div>
        
-                <input class="col-sm-offset-6 btn btn-success" type="submit" value="enregistrer">
+                <input class="col-sm-offset-6 btn btn-success" type="submit" value="Enregistrer la plage">
                 
             </form>
             

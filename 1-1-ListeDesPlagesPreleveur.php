@@ -31,37 +31,33 @@ and open the template in the editor.
 </ol>
         </header>
         <h1>Sélectionner une plage</h1>
-        <table class="table">
-            <tr>
+        <form action="1-2-BDD-AjouterZonePreleveur.php"
+                  method="post">
                 
-                <th>Nom de la plage</th>  
-                <th>Superficie</th>
-                <th>Ville</th>
-                <th>Date de prélevement</th>
-               
-                
-            </tr>
-            <?php $plages=Plage::getAllPlages();
-            foreach ($plages as $plage){
-            ?>
-            <tr>
-                
-                <td><?php echo $plage->nomplage ?></td>
-                <td><?php echo $plage->superficie ?></td>
-                <td><?php echo $plage->ville ?></td>
-                <td><?php echo $plage->date_prelevement ?></td>
-                <td><?php echo $plage->id ?></td>
-                
-            </tr> 
-            
-              <?php  
-            }
+                    <?php $plages=Plage::getAllPlages();
+                    foreach ($plages as $plage){
+                    ?>   
+                <div class="radio">
+                    <label>
+                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
+                      <?php echo $plage->nomplage ?>
+                    </label>
+                  </div>
+                  <?php  
+                 }
                 ?>
-        </table>
+              
+                
+        
+       
+    <button type="submit" class="btn btn-warning btn-block btn-lg">Sélectionner la plage</button>
+                <br>
+                
+            </form>
                
 
                
-        <a href="1-10-ChoixDesActions.php"><button type="submit" class="btn btn-warning btn-block">Sélectionner</button></a>
+        
             
     </body>
 </html>

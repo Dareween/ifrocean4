@@ -35,7 +35,7 @@
                <h1>Sélectionner une action liée à la zone</h1>
             <hr>
             
-              <a href="11-ListeDesZones.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les zones</a>
+            <a href="1-3-ListeDesZonesPreveleur.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les zones</a>
               
               </br>
               </br>

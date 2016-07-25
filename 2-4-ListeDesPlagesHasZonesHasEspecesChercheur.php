@@ -28,7 +28,7 @@ and open the template in the editor.
             <tr>
               
                     <th>Plage id</th>
-        <th>Nom espèce</th> 
+                <th>Nom espèce</th> 
                   <th>Total des individus par</br>espèce des zones prélevées</th>
                  <th>Densité par espèce au m2</th>  
                  <th>Extrapolation de la quantité </br>d'individus par espèce par plage</th>  

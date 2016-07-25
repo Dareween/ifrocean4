@@ -56,8 +56,9 @@ and open the template in the editor.
                 <td><?php echo $plagehaszone->nomplage ?></td>
               <td><?php echo $plagehaszone->nomespece ?></td>
                 <td><?php echo $plagehaszone->sumquantite ?></td>
-                <td><?php echo $plagehaszone->sumdensite ?></td>
+                <td><?php echo $plagehaszone->sumdensite ?></td>  
                 <td><?php echo $plagehaszone->extrapolation ?></td>
+                
               </tr>
             
               <?php  

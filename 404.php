@@ -19,14 +19,6 @@ and open the template in the editor.
    <head>
         <meta charset="UTF-8">
         <title> Erreur 404 </title>
-<!--        <style>
-            container
-            {
-                border-spacing : 0;
-                border-collapse : collapse;
-            }
-       
-        </style>-->
     </head>
     <body>
         <div class="container">
@@ -39,12 +31,10 @@ and open the template in the editor.
                    <a href="0-0-indexAccueil.php"><button type="button" class="btn btn-danger btn-lg">Cliquez ici !</button></a>
                    <a href="0-0-indexAccueil.php"><button type="button" class="btn btn-warning btn-lg">ou là</button></a>
                    <a href="0-0-indexAccueil.php"><button type="button" class="btn btn-success btn-lg">ou là</button></a>
-                   <a href="0-0-indexAccueil.php"><button type="button" class="btn btn-info btn-lg">ou là ;)</button></a>
-       
+                   <a href="0-0-indexAccueil.php"><button type="button" class="btn btn-info btn-lg">ou là ;)</button></a>       
                    <br>
-                   <br>
-                 
-                   <img src="photo/pokemon010.png" alt="annelide_pokemon" width="150px" height="150px"/>
+                   <br>              
+                   <img src="photo/pokemon-annelide.png" alt="pokemon_annelide" width="150px" height="150px"/>
                    <h3> Si si, je suis une bien annélide !</h3>
         </div>
         

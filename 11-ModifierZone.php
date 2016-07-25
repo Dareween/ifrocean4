@@ -8,7 +8,7 @@ include_once 'Ifrocean_BDD/Plage.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ajouter une zone</title>
+        <title>Modifier une zone</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -29,15 +29,12 @@ include_once 'Ifrocean_BDD/Plage.php';
         </header>
         
      <div class="container">
-            <h1>Ajouter une zone</h1>
-            <hr>
-             <a href="1-3-ListeDesZonesPreveleur.php" class="btn btn-primary btn-lg active btn-lg" role="button">Voir et modifier les zones
-                  <br> déjà crées</a>
-            <hr>
+            <h1>Modifier une zone</h1>
+          
             
             <form action="1-2-POSTAjouterZone.php"
                   method="post">
-                <h2>Test Sélectionner une plage : n'enregistre pas l'id dans la base</h2>
+                <h2></h2>
                     <?php $plages=Plage::getAllPlages();
                     foreach ($plages as $plage){
                     ?>   

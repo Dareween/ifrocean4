@@ -32,7 +32,7 @@ include_once 'Ifrocean_BDD/Plage.php';
             <h1>Ajouter une zone</h1>
             <hr>
             
-            <form action="11-BDD-POSTAjouterZone.php"
+            <form action="1-2-POSTAjouterZone.php"
                   method="post">
                 <h2>Test Sélectionner une plage : n'enregistre pas l'id dans la base</h2>
                     <?php $plages=Plage::getAllPlages();

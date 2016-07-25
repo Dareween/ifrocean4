@@ -70,5 +70,5 @@ $zo->Inserer();
 
 
 //renvoie vers une page
-header('Location: 11-ListeDesZones.php');
+header('Location: 1-3-ListeDesZonesPreleveur.php');
 

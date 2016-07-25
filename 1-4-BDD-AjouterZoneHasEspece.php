@@ -59,7 +59,7 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
                 <?php
             }
             ?>
-                <a href="13-ListeDesEspeces.php" class="btn btn-primary btn-lg active" role="button">Ajouter ou Modifier</a>
+                <a href="1-7-ListeDesEspecesPreleveur.php" class="btn btn-primary btn-lg active" role="button">Ajouter ou Modifier</a>
                 
                 <h2>Quantité</h2>
           

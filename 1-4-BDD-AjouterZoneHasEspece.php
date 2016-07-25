@@ -38,7 +38,7 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
      <div class="container">
             <h1>Nouveau prélèvement</h1>
             <hr>
-            <form action="14-BDD-POSTAjouterZoneHasEspece.php"
+            <form action="1-4-BDD-POSTAjouterZoneHasEspece.php"
                   method="post">
                 
                 <h2>Sélectionner une espèce</h2>

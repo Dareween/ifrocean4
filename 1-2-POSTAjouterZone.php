@@ -70,5 +70,5 @@ $zo->Inserer();
 
 
 //renvoie vers une page
-header('Location: 1-3-ListeDesZonesPreleveur.php');
+header('Location: 1-4-BDD-AjouterZoneHasEspece.php');
 

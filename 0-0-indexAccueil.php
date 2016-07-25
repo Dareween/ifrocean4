@@ -24,14 +24,14 @@
   <li><a href="">Accueil</a></li>
 </ol>
         </header>
-        <br>
+        
 
  <div class="container">
   <div class="row">
       
    <!-- <div class="col-md-6 col-sm-12 col-lg-20"-->
-        
-        
+   <h1>Suivi des annélides des estrans sablonneux de L’Ouest Atlantique</h1>
+        <br>
    <a href="0-1-ChoixDesActions.php"><button type="button" class="btn btn-danger btn-block">CHERCHEUR</button></a>
 
 <br>

@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group row">
                     <label for="date_prelevement" class="col-sm-2
-                           form-control-label">Date de prélevement</label>
+                           form-control-label">Date du prélevement</label>
                     <div class="col-sm-4">
                         <input type="date" required
                                name="date_prelevement" id="date_prelevement"

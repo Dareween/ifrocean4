@@ -64,7 +64,7 @@
                     </div>
                 </div>
        
-                  <a href="1-1-ListeDesPlagesPreleveur.php"><input class="btn btn-success btn-block" type="submit" value="Enregistrer la plage">
+                <a href="2-3-ListeDesPlagesChercheur.php"><input class="btn btn-success btn-block" type="submit" value="Enregistrer la plage">
               </a>
                 
             </form>

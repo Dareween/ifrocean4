@@ -37,7 +37,9 @@ include_once 'Ifrocean_BDD/Plage.php';
             
             <form action="1-2-POSTAjouterZone.php"
                   method="post">
-                <h2>Test Sélectionner une plage : n'enregistre pas l'id dans la base</h2>
+<!--                <h2>Test Sélectionner une plage : n'enregistre pas l'id dans la base</h2>-->
+                    <h2>Voici la plage que vous avez sélectionné</h2>
+
                     <?php $plages=Plage::getAllPlages();
                     foreach ($plages as $plage){
                     ?>   

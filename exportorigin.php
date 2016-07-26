@@ -8,7 +8,7 @@ include_once 'Ifrocean_BDD/ZoneKml.php';
 
 
 header('Content-Type: application/xml');
-//header('Content-Disposition: attachment;filename="export.kml');
+header('Content-Disposition: attachment;filename="export.kml');
 
 echo('<?xml version="1.0" encoding="UTF-8"?>');
 ?>

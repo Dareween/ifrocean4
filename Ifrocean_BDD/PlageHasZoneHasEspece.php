@@ -87,8 +87,16 @@ class PlageHasZoneHasEspece {
                 . ";dbname=" . Config::DBNAME
                 , Config::USERNAME
                 , Config::PASSWORD);
+        $id=$_GET["id"];
 
-        $req = $pdo->prepare("SELECT nomplage, superficie, nomespece, SUM(quantite) AS sumquantite, SUM(zones.surface), SUM(quantite)/SUM(zones.surface)*plages.superficie AS extrapolation, SUM(quantite)/SUM(zones.surface) AS sumdensite FROM zones, zones_has_especes, plages, especes WHERE zones_has_especes.espece_id=especes.id AND zones_has_especes.plage_id=plages.id AND zones_has_especes.zone_id=zones.id GROUP BY nomespece ORDER BY zones_has_especes.plage_id");
+        $req = $pdo->prepare("SELECT nomplage, superficie, nomespece, SUM(quantite) AS sumquantite, SUM(zones.surface), "
+                . "SUM(quantite)/SUM(zones.surface)*plages.superficie AS extrapolation, SUM(quantite)/SUM(zones.surface) "
+                . "AS sumdensite FROM zones, zones_has_especes, plages, especes "
+                . "WHERE zones_has_especes.espece_id=especes.id "
+                . "AND zones_has_especes.plage_id=plages.id "
+                . "AND zones_has_especes.zone_id=zones.id "
+                . "AND plages.id ='$id' "
+                . "GROUP BY nomespece ORDER BY zones_has_especes.plage_id");
 
 
         $req->execute();

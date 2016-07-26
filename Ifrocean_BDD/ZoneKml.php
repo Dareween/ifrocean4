@@ -56,7 +56,10 @@ class ZoneKml {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT latA, latB, latC, latD, longA, longB, longC, longD, nomespece, id_zhe, zone_id, espece_id, zones.plage_id, quantite, densite_zone FROM zones_has_especes, especes, zones GROUP BY zone_id");
+        $req = $pdo->prepare("SELECT latA, latB, latC, latD, longA, longB, longC, longD, nomespece, id_zhe, zone_id, espece_id, z.plage_id, quantite, densite_zone 
+FROM zones_has_especes zhe, especes e, zones z
+WHERE zhe.espece_id = e.id AND
+zhe.zone_id = z.id");
         
         $req->execute();
         
@@ -64,7 +67,7 @@ class ZoneKml {
         if ($req->rowCount() >= 1) {
       
             while ($ligne = $req->fetch()) {
-                $zoneshasespeces[] = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["nomespece"],$ligne["latA"], $ligne["latB"], $ligne["latC"], $ligne["latD"], $ligne["longA"], $ligne["longB"], $ligne["longC"], $ligne["longD"], $ligne["id_zhe"] );
+                $zoneshasespeces[] = new ZoneKml($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["nomespece"],$ligne["latA"], $ligne["latB"], $ligne["latC"], $ligne["latD"], $ligne["longA"], $ligne["longB"], $ligne["longC"], $ligne["longD"], $ligne["id_zhe"] );
                 
                 
             }

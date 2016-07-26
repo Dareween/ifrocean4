@@ -35,7 +35,7 @@ and open the template in the editor.
         <table class="table">
             <tr>
               
-                    <th>Plage id</th>
+                    <th>PNom de la plage</th>
                 <th>Nom espèce</th> 
                   <th>Total des individus par</br>espèce des zones prélevées</th>
                  <th>Densité par espèce au m2</th>  

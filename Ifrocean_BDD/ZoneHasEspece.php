@@ -166,5 +166,27 @@ class ZoneHasEspece {
 
         $req->execute();
     }
+    
+            public function Modifier() {
+        $pdo = new PDO("mysql:host=" . Config::SERVERNAME
+                . ";dbname=" . Config::DBNAME
+                , Config::USERNAME
+                , Config::PASSWORD);
+
+        $req = $pdo->prepare("UPDATE zones_has_especes SET id_zhe=:id_zhe, zone_id=:zone_id, espece_id=:espece_id, plage_id=:plage_id, quantite_id=:quantite_id where id=:cle");
+
+        $req->bindParam(":cle", $this->id_zhe);
+         $req->bindParam(":zone_id", $this->zone_id);
+         $req->bindParam(":espece_id", $this->espece_id);
+         $req->bindParam(":plage_id", $this->plage_id);
+         $req->bindParam(":quantite_id", $this->quantite_id);
+
+         
+        $req->execute();
+    }
+
+
+       
+    
 
 }

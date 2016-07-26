@@ -1,6 +1,6 @@
 <?php
 include_once 'Ifrocean_BDD/ZoneHasEspece.php';
-
+include_once 'Ifrocean_BDD/ZoneKml.php';
 ?>
 
 
@@ -24,36 +24,41 @@ and open the template in the editor.
     </head>
     <body>
         <h1>Liste des prélèvements</h1>
-        <table class="table">
+       
+        
+         <table class="table">
             <tr>
-                <th>Nom de la plage</th>
+                <!--<th>Nom de la plage</th>-->
                 <th>Id du prélevement</th> 
                   <th>Id de la zone</th>
                  <th>Id de l'espèce</th>
-                 <th>Nom de l'espèce</th> 
+                 <th>Nom espèce</th>
+                 
                  <th>Quantité</th>
-                 <th>Densité</th>
+                
                 <th>Voir</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
                 
             </tr>
-            <?php $zonehasespeces=ZoneHasEspece::getAllZonesHasEspeces();
+            <?php $zonehasespeces=ZoneKml::getAllZonesKml();
             foreach ($zonehasespeces as $zonehasespece){
             ?>
             <tr>
-               <td></td>
+               
                 <td>Prélevement : <?php echo $zonehasespece->id_zhe ?></td>
                  <td>Zone N°<?php echo $zonehasespece->zone_id ?></td>
                  <td>Espece N°<?php echo $zonehasespece->espece_id ?></td>
-                 <td><?php echo $zonehasespece->nomespece ?></td>
+                  <td><?php echo $zonehasespece->nomespece?>
+             
+                 
                 <td><?php echo $zonehasespece->quantite ?></td>
-                <td><?php echo $zonehasespece->densite_zone ?></td>
-                
                 <td><a href="14-VoirZoneHasEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Voir</a></td>
                 <td><a href="14-ModifierZoneEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Modifier</a></td>
                 <td><a href="14-SupprimerZoneHasEspece.php?id_zhe=<?php echo $zonehasespece->id_zhe ?>">Supprimer</a></td>
-            </tr> 
+                
+                
+               
             
               <?php  
             }

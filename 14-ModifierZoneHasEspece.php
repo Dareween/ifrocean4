@@ -1,6 +1,6 @@
 <?php
 include_once 'Ifrocean_BDD/ZoneHasEspece.php';
-$id=$_GET["id"];
+$id=$_GET["id_zhe"];
 $espece=Espece::getById($id);
 
 

@@ -23,6 +23,14 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+     <header>
+            <div class="bandeau1">Projet Ifrocean - Chercheur</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="2-0-ChoixDesActions.php">Actions Chercheur</a></li>
+               
+</ol>
+        </header>
         <h1>Total des individus par espèce par plage</h1>
         <table class="table">
             <tr>
@@ -56,5 +64,6 @@ and open the template in the editor.
             }
                 ?>
         </table>
+        <a href="exportorigin.php" class="btn btn-success btn-lg active" role="button">Export KML</a>
     </body>
 </html>

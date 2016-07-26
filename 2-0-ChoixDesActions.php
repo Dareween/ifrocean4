@@ -15,27 +15,39 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body>
+        <header>
+            <div class="bandeau1">Projet Ifrocean - Chercheur</div>
+            <ol class="breadcrumb">
+                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="2-0-ChoixDesActions.php">Actions Chercheur</a></li>
+               
+</ol>
+        </header>
      <div class="container">
-            <h1>Sélectionner une action</h1>
+            <h1>Sélectionner une action liée à la plage</h1>
             <hr>
-             <a href="12-BDD-AjouterPlage.php" class="btn btn-primary btn-lg active" role="button">Ajouter une plage</a>
-             <a href="12-ListeDesPlages.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les plages</a>
+            <a href="2-1-BDD-AjouterPlageChercheur.php" class="btn btn-primary btn-lg active" role="button">Ajouter une plage</a>
+             <a href="2-3-ListeDesPlagesChercheur.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les plages</a>
+             <a href="2-4-ListeDesPlagesHasZonesHasEspecesChercheur.php" class="btn btn-primary btn-lg active" role="button">Voir les espèces par plage</a>
                </br>
               </br>
-              <a href="11-BDD-AjouterZone.php" class="btn btn-primary btn-lg active" role="button">Ajouter une zone</a>
-              <a href="11-ListeDesZones.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les zones</a>
+              
+               <h1>Sélectionner une action liée à la zone</h1>
+            <hr>
+            
+            <a href="1-3-ListeDesZonesPreveleur.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les zones</a>
               
               </br>
               </br>
-              <a href="13-BDD-AjouterEspece.php" class="btn btn-primary btn-lg active" role="button">Ajouter une espèce</a>
-              <a href="13-ListeDesEspeces.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les espèces</a>
+             
+              <a href="1-7-ListeDesEspecesPreleveur.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les espèces</a>
               </br>
               </br>
-              <a href="14-BDD-AjouterZoneHasEspece.php" class="btn btn-primary btn-lg active" role="button">Ajouter un prélevement</a>
-              <a href="14-ListeDesZonesHasEspeces.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les prélevements</a>
+              <a href="14-BDD-AjouterZoneHasEspece.php" class="btn btn-success btn-lg active" role="button">Ajouter un prélevement</a>
+              <a href="14-ListeDesZonesHasEspeces.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les prélevements</a>
                <br>
                </br>
-               <a href="15-ListeDesPlagesHasZonesHasEspeces.php" class="btn btn-primary btn-lg active" role="button">Voir les espèces par plages</a>
+               
                
                
               

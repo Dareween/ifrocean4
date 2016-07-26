@@ -16,14 +16,14 @@
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
-                <li><a href="0-1-ChoixDesActions.php">Actions Chercheur</a></li>
+                <li><a href="2-0-ChoixDesActions.php">Actions Chercheur</a></li>
                
 </ol>
         </header>
      <div class="container">
             <h1>Ajouter une plage</h1>
             <hr>
-            <form action="12-BDD-POSTAjouterPlage.php"
+            <form action="2-1-BDD-POSTAjouterPlage_1.php"
                   method="post">
                 <h2>Plage</h2>
                 <h3>Informations</h3>

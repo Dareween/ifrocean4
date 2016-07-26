@@ -123,6 +123,7 @@ class Espece {
 
          
             $espece = new Espece($ligne["nomespece"], $ligne["id"]);
+            //echo($ligne["nomespece"]);
 
             return $espece;
         } else {

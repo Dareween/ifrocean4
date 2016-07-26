@@ -59,8 +59,12 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
                 <?php
             }
             ?>
-                <a href="1-7-ListeDesEspecesPreleveur.php" class="btn btn-primary btn-lg active" role="button">Ajouter ou Modifier</a>
+                <h2>ou</h2>
                 
+                <a href="1-7-ListeDesEspecesPreleveur.php"><button type="button" class="btn btn-default navbar-btn">
+                        Ajouter / modifier une espèce</button></a>
+       
+                <hr>
                 <h2>Quantité</h2>
           
                 <div class="form-group row">
@@ -73,23 +77,20 @@ include_once 'Ifrocean_BDD/ZoneHasEspece.php';
                     </div>
                 </div>
                
-                <h2>Sélectionner une plage</h2>
-                 
-                     <?php $plages=Plage::getAllPlages();
-            foreach ($plages as $plage){
-            ?>
-                
-                     <div class="radio">
+         
+                  <?php $plages=Plage::getAllPlagesById();
+                    foreach ($plages as $plage){
+                    ?>   
+                <div class="radio">
                     <label>
-                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
-                      <?php echo $plage->nomplage ?>
-                      <?php echo $plage->id ?>
+                      <input type="hidden" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
+                     
                     </label>
                   </div>
-                     
-                <?php
-            }
-            ?>
+                  <?php  
+                 }
+                ?>
+                <hr>
                 <h2>Sélectionner une zone</h2>
             
                      

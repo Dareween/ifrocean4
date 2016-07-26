@@ -63,12 +63,12 @@ $zo = new Zone(
         );
 
 $zo->surface=$zo->calculerSurface();
-/*echo ($zo->plage_id);*/
+//echo ($zo->plage_id);
 //Enregistrer en BDD
 $zo->Inserer();
 
 
 
 //renvoie vers une page
-header('Location: 1-4-BDD-AjouterZoneHasEspece.php');
+header("Location: 1-4-BDD-AjouterZoneHasEspece.php?id=$plage_id");
 

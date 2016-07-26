@@ -63,6 +63,15 @@
                                class="form-control">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="cloturer" class="col-sm-2
+                           form-control-label">Cloturer ?</label>
+                    <div class="col-sm-4">
+                        <input type="cloturer" required
+                               name="cloturer" id="cloturer"
+                               class="form-control">
+                    </div>
+                </div>
        
                 <input class="col-sm-offset-6 btn btn-success" type="submit" value="Enregistrer la plage">
                 

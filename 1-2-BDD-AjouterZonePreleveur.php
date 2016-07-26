@@ -35,23 +35,23 @@ include_once 'Ifrocean_BDD/Plage.php';
                   <br> déjà crées</a>
             <hr>
             
-            <form action="1-2-POSTAjouterZone.php"
+            
+                <form action="1-2-POSTAjouterZone.php"
                   method="post">
-<!--                <h2>Test Sélectionner une plage : n'enregistre pas l'id dans la base</h2>-->
-                    <h2>Voici la plage que vous avez sélectionné</h2>
-
-                    <?php $plages=Plage::getAllPlages();
+          
+                    <?php $plages=Plage::getAllPlagesById();
                     foreach ($plages as $plage){
                     ?>   
                 <div class="radio">
                     <label>
-                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
-                      <?php echo $plage->nomplage ?>
+                      <input type="hidden" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
+                     
                     </label>
                   </div>
                   <?php  
                  }
                 ?>
+              
               
                 <h2>Point A</h2>
                 <h3>Latitude A</h3>

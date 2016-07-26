@@ -39,8 +39,9 @@ and open the template in the editor.
                 <th>Superficie</th>
                 <th>Ville</th>
                 <th>Date de prélevement</th>
+                <td>Etude fermée ?</td>
                 <th>Voir</th>
-                <th>Modifier</th>
+                <th>Modifier</th>`
                 <th>Supprimer</th>
                 
             </tr>
@@ -53,9 +54,11 @@ and open the template in the editor.
                 <td><?php echo $plage->superficie ?></td>
                 <td><?php echo $plage->ville ?></td>
                 <td><?php echo $plage->date_prelevement ?></td>
+                <td><?php echo $plage->cloturer ?></td>
                 
                 <td><a href="2-4-ListeDesPlagesHasZonesHasEspecesChercheur.php?id=<?php echo $plage->id ?>">Voir</a></td>
                 <td><a href="12-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a></td>
+                <td><a href="2-2-4-CloturerPlage.php?id=<?php echo $plage->id ?>">Cloturer</a></td>
                 <td><a href="10-SupprimerPlage.php?id=<?php echo $plage->id ?>">Supprimer</a></td>
             </tr> 
             

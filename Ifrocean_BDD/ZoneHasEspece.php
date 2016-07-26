@@ -13,21 +13,12 @@ class ZoneHasEspece {
     public $espece_id;
     public $densite_zone;
     public $nomespece;
-    public $latA;
-    public $latB;
-    public $latC;
-    public $latD;
-    public $longA;
-    public $longB;
-    public $longC;
-    public $longD;
-  
   
    
     
 
 
-    public function __construct($zone_id, $espece_id, $plage_id, $quantite, $nomespece, $latA, $latB, $latC, $latD, $longA, $longB, $longC, $longD, $cle = 0) {
+    public function __construct($zone_id, $espece_id, $plage_id, $quantite, $cle = 0) {
         $this->zone_id = $zone_id;
         $this->espece_id = $espece_id;
         $this->plage_id = $plage_id;
@@ -110,7 +101,7 @@ class ZoneHasEspece {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT latA, latB, latC, latD, longA, longB, longC, longD, nomespece, id_zhe, zone_id, espece_id, zones.plage_id, quantite, densite_zone FROM zones_has_especes, especes, zones GROUP BY zone_id");
+        $req = $pdo->prepare("SELECT id_zhe, zone_id, espece_id, zones.plage_id, quantite, densite_zone FROM zones_has_especes, especes, zones GROUP BY zone_id");
         
         $req->execute();
         
@@ -118,7 +109,7 @@ class ZoneHasEspece {
         if ($req->rowCount() >= 1) {
       
             while ($ligne = $req->fetch()) {
-                $zoneshasespeces[] = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["nomespece"],$ligne["latA"], $ligne["latB"], $ligne["latC"], $ligne["latD"], $ligne["longA"], $ligne["longB"], $ligne["longC"], $ligne["longD"], $ligne["id_zhe"] );
+                $zoneshasespeces[] = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["id_zhe"] );
                 
                 
             }
@@ -153,7 +144,7 @@ class ZoneHasEspece {
             $ligne = $req->fetch();
 
          
-            $zonehasespece = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["nomespece"], $ligne["id_zhe"]);
+            $zonehasespece = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["id_zhe"]);
 
 
             return $zonehasespece;

@@ -66,7 +66,8 @@ class Plage {
     }
     
     
-        public function cloturer() {
+    
+     public function cloturer() {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME
                 , Config::USERNAME
@@ -77,6 +78,27 @@ class Plage {
         $req->bindParam(":cle", $this->id);
          $req->bindParam(":cloturer", $this->cloturer);
 
+        $req->execute();
+    }
+
+    
+    
+    
+        public function modifier() {
+        $pdo = new PDO("mysql:host=" . Config::SERVERNAME
+                . ";dbname=" . Config::DBNAME
+                , Config::USERNAME
+                , Config::PASSWORD);
+
+        $req = $pdo->prepare("UPDATE plages SET nomplage=:nomplage, superficie=:superficie, ville=:ville, date_prelevement=:date_prelevement, cloturer=:cloturer where id=:cle");
+
+        $req->bindParam(":cle", $this->id);
+         $req->bindParam(":cloturer", $this->cloturer);
+        $req->bindParam(":nomplage", $this->nomplage);
+        $req->bindParam(":superficie", $this->superficie);
+         $req->bindParam(":ville", $this->ville);
+        $req->bindParam(":date_prelevement", $this->date_prelevement);
+        
         $req->execute();
     }
 
@@ -152,33 +174,34 @@ class Plage {
             return $plages;
         }
     }
-
-    public static function getById($cle) {
+    
+    
+        public static function getById($cle) {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("select nomplage, superficie, ville, cloturer, date_prelevement, id from plages"
+        $req = $pdo->prepare("select nomplage, superficie, ville, date_prelevement, cloturer, id from plages"
                 . " where id=:cle");
+
         
         $req->bindParam(":cle", $cle);
         
         $req->execute();
         if ($req->rowCount() == 1) {
-          while  ($ligne = $req->fetch());
+            $ligne = $req->fetch();
 
-            
-        $plage = new Plage($ligne["nomplage"], $ligne["superficie"], $ligne["ville"], $ligne["date_prelevement"], $ligne["cloturer"], $ligne["id"]);
-       
-        
+         
+            $plage = new Plage($ligne['nomplage'], $ligne['superficie'], $ligne['ville'], $ligne['date_prelevement'], $ligne['cloturer'], $ligne['id']);
+            //echo($ligne["nomespece"]);
 
             return $plage;
-            
         } else {
             return null;
         }
     }
+
 
     public function supprimer() {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME

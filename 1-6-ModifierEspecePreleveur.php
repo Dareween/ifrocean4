@@ -35,15 +35,12 @@ $espece=Espece::getById($id);
                   method="post">
                
                 <div class="form-group row">
-                    <label for="id" class="col-sm-2
-                           form-control-label">Id</label>
-                    <div class="col-sm-2">
-                        
+                  
                         <input 
-                            type="number" required
+                            type="hidden" required
                                name="id" id="disabledInput" value="<?php echo($espece->id) ?>"
                                class="form-control">
-                        <span>Merci de ne pas modifier la valeur de l'id</span>
+                        
                     </div>
                     <label for="nomespece" class="col-sm-2
                            form-control-label">Nom de l'espèce</label>
@@ -58,8 +55,6 @@ $espece=Espece::getById($id);
                 <input class="col-sm-offset-6 btn btn-success" type="submit" value="Enregistrer l'espèce">
                 
             </form>
-            
-            <div class="col-sm-12"> <a href="1-7-ListeDesEspecesPreleveur.php" class="col-sm-offset-6 btn btn-primary" role="button">Revenir à la liste</a>
                 </div>
              
         </div>

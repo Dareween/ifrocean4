@@ -26,9 +26,9 @@
      <div class="container">
             <h1>Sélectionner une action liée à la plage</h1>
             <hr>
-            <a href="2-1-BDD-AjouterPlageChercheur.php" class="btn btn-primary btn-lg active" role="button">Ajouter une plage</a>
-             <a href="2-3-ListeDesPlagesChercheur.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les plages</a>
-             <a href="2-4-ListeDesPlagesHasZonesHasEspecesChercheur.php" class="btn btn-primary btn-lg active" role="button">Voir les espèces par plage</a>
+            <a href="2-1-BDD-AjouterPlageChercheur.php" class="btn btn-primary btn-lg active" role="button">Créer une étude</a>
+             <a href="2-3-ListeDesPlagesChercheur.php" class="btn btn-primary btn-lg active" role="button">Voir et modifier les études</a>
+           
                </br>
               </br>
               
@@ -44,7 +44,7 @@
               </br>
               </br>
               <a href="14-BDD-AjouterZoneHasEspece.php" class="btn btn-success btn-lg active" role="button">Ajouter un prélevement</a>
-              <a href="14-ListeDesZonesHasEspeces.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les prélevements</a>
+              <a href="14-ListeDesZonesHasEspeces.php" class="btn btn-success btn-lg active" role="button">Voir et supprimer des prélevements</a>
                <br>
                </br>
                

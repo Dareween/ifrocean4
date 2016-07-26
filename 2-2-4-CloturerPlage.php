@@ -5,19 +5,11 @@ $id=$_GET["id"];
 $plage=Plage::getById($id);
 
 
-echo($plage->id);
-
-
-include_once 'Ifrocean_BDD/Espece.php';
-$id=$_GET["id"];
-$espece=Espece::getById($id);
-
-
-echo($espece->id);
-
 
 
 ?>
+
+
 
 
 <html>
@@ -37,43 +29,53 @@ echo($espece->id);
             
             <div class="container">
                 
-            <h1>Cloturer une étude (plage)</h1>
+            <h1>Clôturer une étude (plage)</h1>
     
                 
           
             
             <hr>
+            <h2>Statut de l'étude</h2>
+            
+            <div>L'étude est actuellement
+            <?php 
+            if($plage->cloturer==1){
+                echo('fermée');
+            }else{
+                echo('ouverte');
+            }
+            ?>
+            </div>
+            <div>Pour changer son statut, cliquez sur l'un des boutons et validez.
+                L'étude ne sera plus disposnible aux préleveurs si vous la fermer mais vous pourrez toujours la consulter.</div>
             <form action="2-2-4-BDD-POSTCloturerPlage.php"
                   method="post">
-               
-                <div class="form-group row">
-                    <label for="id" class="col-sm-2
-                           form-control-label"></label>
-                    <div class="col-sm-0">
-                        
-                        <input 
-                            type="number" required
+              
+                <div class="radio">
+                <label>
+                 <input type="radio" name="cloturer" id="cloturer" value="0">
+                 Ouverte
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                 <input type="radio" name="cloturer" id="cloturer" value="1">
+                Fermée
+                </label>
+                </div>
+                <div>
+                        <input type="hidden" required
                                name="id" id="disabledInput" value="<?php echo($plage->id) ?>"
                                class="form-control">
-                      
                     </div>
-                    <label for="cloturer" class="col-sm-2
-                           form-control-label">Cloturer</label>
-                    <div class="col-sm-2">
-                        <input type="number" required step="1" max="1" min="0"
-                               name="cloturer" id="cloturer" value="<?php echo($plage->cloturer) ?>"
-                               class="form-control">
-                        <?php echo($plage->cloturer) ?>
-                    </div>
-                </div>
+                    
       
        
-                <input class="col-sm-offset-6 btn btn-success" type="submit" value="Valider">
+                <input class="col-sm-3 btn btn-success" type="submit" value="Valider">
                 
             </form>
             
-            <div class="col-sm-12"> <a href="0-0-indexAccueil.php" class="col-sm-offset-6 btn btn-primary" role="button">Revenir à l'accueil</a>
-                </div>
+           
              
         </div>
 

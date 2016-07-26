@@ -31,13 +31,11 @@ and open the template in the editor.
                 <!--<th>Nom de la plage</th>-->
                 <th>Id du prélevement</th> 
                   <th>Id de la zone</th>
-                 <th>Id de l'espèce</th>
-                 <th>Nom espèce</th>
-                 
+                <th>Nom espèce</th>
                  <th>Quantité</th>
                 
-                <th>Voir</th>
-                <th>Modifier</th>
+                <!--<th>Voir</th>
+                <th>Modifier</th>-->
                 <th>Supprimer</th>
                 
             </tr>
@@ -47,14 +45,14 @@ and open the template in the editor.
             <tr>
                
                 <td>Prélevement : <?php echo $zonehasespece->id_zhe ?></td>
-                 <td>Zone N°<?php echo $zonehasespece->zone_id ?></td>
-                 <td>Espece N°<?php echo $zonehasespece->espece_id ?></td>
+                 <td>Etude N°<?php echo $zonehasespece->plage_id ?></td>
+                 
                   <td><?php echo $zonehasespece->nomespece?>
              
                  
                 <td><?php echo $zonehasespece->quantite ?></td>
-                <td><a href="14-VoirZoneHasEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Voir</a></td>
-                <td><a href="14-ModifierZoneEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Modifier</a></td>
+                <!--<td><a href="14-VoirZoneHasEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Voir</a></td>
+                <td><a href="14-ModifierZoneEspece.php?id=<?php echo $zonehasespece->id_zhe ?>">Modifier</a></td>-->
                 <td><a href="14-SupprimerZoneHasEspece.php?id_zhe=<?php echo $zonehasespece->id_zhe ?>">Supprimer</a></td>
                 
                 

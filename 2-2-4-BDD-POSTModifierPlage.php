@@ -14,10 +14,10 @@ $id = $_POST['id'];
 
 $pla = new Plage($nomplage, $superficie, $ville, $date_prelevement, $cloturer, $id);
 
-echo($ville);
+
 
 //Enregistrer en BDD
-$pla->Cloturer();
+$pla->Modifier();
 
 
 

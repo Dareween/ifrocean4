@@ -1,5 +1,14 @@
 <?php
 include_once 'Ifrocean_BDD/Plage.php';
+include_once 'Ifrocean_BDD/Zone.php';
+include_once 'Ifrocean_BDD/Point.php';
+
+$id=$_GET["id"];
+$zone=Zone::getById($id);
+
+
+
+
 
 ?>
 
@@ -32,21 +41,11 @@ include_once 'Ifrocean_BDD/Plage.php';
             <h1>Modifier une zone</h1>
           
             
-            <form action="1-2-POSTAjouterZone.php"
+            <form action="1-2-POSTModifierZone.php"
                   method="post">
-                <h2></h2>
-                    <?php $plages=Plage::getAllPlages();
-                    foreach ($plages as $plage){
-                    ?>   
-                <div class="radio">
-                    <label>
-                      <input type="radio" name="plage_id" id='plage_id' value="<?php echo $plage->id ?>" checked>
-                      <?php echo $plage->nomplage ?>
-                    </label>
-                  </div>
-                  <?php  
-                 }
-                ?>
+                <input type="hidden" name="plage_id" id='plage_id' value="<?php echo $zone->plage_id ?>" checked>
+                      
+                    
               
                 <h2>Point A</h2>
                 <h3>Latitude A</h3>
@@ -56,7 +55,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latAdegre" id="latAdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -65,7 +64,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latAmin" id="latAmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -75,7 +74,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="latAsec" id="latAsec"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                  <h3>Longitude A</h3>
@@ -85,7 +84,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longAdegre" id="longAdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -94,7 +93,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longAmin" id="longAmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -104,7 +103,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="longAsec" id="longAsec"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -117,7 +116,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latBdegre" id="latBdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -126,7 +125,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latBmin" id="latBmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -136,7 +135,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01"  name="latBsec" id="latBsec"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                  <h3>Longitude B</h3>
@@ -146,7 +145,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longBdegre" id="longBdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -155,7 +154,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longBmin" id="longBmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -165,7 +164,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01"  name="longBsec" id="longBsec"
-                               class="form-control">
+                               class="form-control"value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                  
@@ -177,7 +176,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latCdegre" id="latCdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -186,7 +185,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latCmin" id="latCmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -196,7 +195,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="latCsec" id="latCsec"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                  <h3>Longitude C</h3>
@@ -206,7 +205,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longCdegre" id="longCdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -215,7 +214,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longCmin" id="longCmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -225,7 +224,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="longCsec" id="longCsec"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -238,7 +237,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latDdegre" id="latDdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -247,7 +246,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="latDmin" id="latDmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                 
@@ -257,7 +256,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01"  name="latDsec" id="latDsec"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[0]->degreLat ?>">
                     </div>
                 </div>
                  <h3>Longitude D</h3>
@@ -267,7 +266,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longDdegre" id="longDdegre"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[3]->degreLong ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -276,7 +275,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" step="1" required
                                min="0" max="500" name="longDmin" id="longDmin"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[3]->minuteLong ?>">
                     </div>
                 </div>
                 
@@ -286,7 +285,7 @@ include_once 'Ifrocean_BDD/Plage.php';
                     <div class="col-sm-4">
                         <input type="number" required
                                step="0.01" name="longDsec" id="longDsec"
-                               class="form-control">
+                               class="form-control" value="<?php echo $zone->lesPoints[3]->secondeLong ?>">
                     </div>
                 </div>  
                          

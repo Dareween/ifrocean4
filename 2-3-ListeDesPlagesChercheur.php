@@ -24,6 +24,7 @@ and open the template in the editor.
     </head>
     <body>
          <header>
+             
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
                 <li><a href="0-0-indexAccueil.php">Accueil</a></li>
@@ -31,7 +32,7 @@ and open the template in the editor.
                
 </ol>
         </header>
-        <h1>Liste des plages</h1>
+        <h1>Liste des études</h1>
         <table class="table">
             <tr>
                 
@@ -39,9 +40,11 @@ and open the template in the editor.
                 <th>Superficie</th>
                 <th>Ville</th>
                 <th>Date de prélevement</th>
-                <td>Etude fermée ?</td>
-                <th>Voir</th>
+                <th>Statut</th>
+                <th>Clotûrer</th>`
+                <th>Consulter et exporter</th>
                 <th>Modifier</th>`
+               
                 <th>Supprimer</th>
                 
             </tr>
@@ -54,12 +57,18 @@ and open the template in the editor.
                 <td><?php echo $plage->superficie ?></td>
                 <td><?php echo $plage->ville ?></td>
                 <td><?php echo $plage->date_prelevement ?></td>
-                <td><?php echo $plage->cloturer ?></td>
+                <td><?php 
+                if($plage->cloturer==1){
+                echo 'fermée';
+                }else{
+                    echo 'ouverte';
                 
-                <td><a href="2-4-ListeDesPlagesHasZonesHasEspecesChercheur.php?id=<?php echo $plage->id ?>">Voir</a></td>
-                <td><a href="12-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a></td>
-                <td><a href="2-2-4-CloturerPlage.php?id=<?php echo $plage->id ?>">Cloturer</a></td>
-                <td><a href="10-SupprimerPlage.php?id=<?php echo $plage->id ?>">Supprimer</a></td>
+                } ?></td>
+                <td><a href="2-2-4-CloturerPlage.php?id=<?php echo $plage->id ?>">Ouvrir / fermer étude</a></td>
+                <td><a href="2-4-ListeDesPlagesHasZonesHasEspecesChercheur.php?id=<?php echo $plage->id ?>">Consulter et exporter</a></td>
+                <td><a href="2-2-4-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a></td>
+                
+                <td><a href="2-2-4-SupprimerPlage.php?id=<?php echo $plage->id ?>">Supprimer</a></td>
             </tr> 
             
               <?php  

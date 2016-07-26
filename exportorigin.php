@@ -4,11 +4,11 @@
 include_once 'Ifrocean_BDD/Plage.php';
 include_once 'Ifrocean_BDD/PlageHasZoneHasEspece.php';
 include_once 'Ifrocean_BDD/ZoneHasEspece.php';
-
+include_once 'Ifrocean_BDD/ZoneKml.php';
 
 
 header('Content-Type: application/xml');
-//header('Content-Disposition: attachment;filename="export.kml');
+header('Content-Disposition: attachment;filename="export.kml');
 
 echo('<?xml version="1.0" encoding="UTF-8"?>');
 ?>
@@ -86,7 +86,7 @@ echo('<?xml version="1.0" encoding="UTF-8"?>');
 				<maxSnippetLines>2</maxSnippetLines>
 			</ListStyle>
 		</Style>
-                         <?php $zonehasespeces=ZoneHasEspece::getAllZonesHasEspeces();
+                         <?php $zonehasespeces=ZoneKml::getAllZonesKml();
             foreach ($zonehasespeces as $zonehasespece){
             ?>
 		<Placemark>

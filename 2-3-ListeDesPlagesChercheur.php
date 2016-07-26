@@ -45,7 +45,7 @@ and open the template in the editor.
                 <td><?php echo $plage->superficie ?></td>
                 <td><?php echo $plage->ville ?></td>
                 <td><?php echo $plage->date_prelevement ?></td>
-                <td><?php echo $plage->id ?></td>
+                
                 <td><a href="12-VoirPlage.php?id=<?php echo $plage->id ?>">Voir</a></td>
                 <td><a href="12-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a></td>
                 <td><a href="10-SupprimerPlage.php?id=<?php echo $plage->id ?>">Supprimer</a></td>

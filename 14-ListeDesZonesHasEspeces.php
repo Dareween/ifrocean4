@@ -1,6 +1,7 @@
 <?php
 include_once 'Ifrocean_BDD/ZoneHasEspece.php';
 include_once 'Ifrocean_BDD/ZoneKml.php';
+
 ?>
 
 
@@ -30,8 +31,10 @@ and open the template in the editor.
             <tr>
                 <!--<th>Nom de la plage</th>-->
                 <th>Id du prélevement</th> 
-                  <th>Id de la zone</th>
+                  <th>Plage </th>
+                  <th>Zone</th>
                 <th>Nom espèce</th>
+                
                  <th>Quantité</th>
                 
                 <!--<th>Voir</th>
@@ -45,7 +48,8 @@ and open the template in the editor.
             <tr>
                
                 <td>Prélevement : <?php echo $zonehasespece->id_zhe ?></td>
-                 <td>Etude N°<?php echo $zonehasespece->plage_id ?></td>
+                 <td>Etude : <?php echo $zonehasespece->nomplage ?></td>
+                 <td>Zone N°<?php echo $zonehasespece->zone_id ?></td>
                  
                   <td><?php echo $zonehasespece->nomespece?>
              

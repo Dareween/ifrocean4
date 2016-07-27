@@ -39,7 +39,7 @@ and open the template in the editor.
                 
                       
         
-                    <li><a href="1-2-BDD-AjouterZonePreleveur.php?id=<?php echo $plage->id ?>"><?php echo $plage->nomplage ?>. n°<?php echo $plage->id ?></a></li>
+                    <li><a href="1-2-ChoixZonesPreleveur.php?id=<?php echo $plage->id ?>"><?php echo $plage->nomplage ?>. n°<?php echo $plage->id ?></a></li>
                     
                  
                   <?php  

@@ -15,7 +15,7 @@
          <header>
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
-                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="2-0-ChoixDesActions.php">Actions Chercheur</a></li>
                
 </ol>
@@ -65,11 +65,11 @@
                 </div>
                 <div class="form-group row">
                     <label for="cloturer" class="col-sm-2
-                           form-control-label">Cloturer ?</label>
+                           form-control-label"></label>
                     <div class="col-sm-4">
-                        <input type="cloturer" required
+                        <input type="hidden" required
                                name="cloturer" id="cloturer"
-                               class="form-control">
+                               class="form-control" value="0">
                     </div>
                 </div>
        

@@ -21,7 +21,7 @@
         <header>
             <div class="bandeau1">Projet Ifrocean</div>
             <ol class="breadcrumb">
-  <li><a href="">Accueil</a></li>
+  <li><a href="index.php">Accueil</a></li>
 </ol>
         </header>
         
@@ -36,7 +36,8 @@
 
 <br>
 
-<a href="1-1-ListeDesPlagesPreleveur.php"><button type="button" class="btn btn-secondary btn-block"> PRÉLEVEUR </button></a>
+<a href="1-10-ChoixDesActions.php"><button type="button" class="btn btn-secondary btn-block"> PRÉLEVEUR </button></a>
+
 
 </div>
 </div>

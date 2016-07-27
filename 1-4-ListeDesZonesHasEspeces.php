@@ -1,5 +1,6 @@
 <?php
 include_once 'Ifrocean_BDD/ZoneHasEspece.php';
+$id=$_GET["id"];
 
 ?>
 
@@ -26,7 +27,7 @@ and open the template in the editor.
           <header>
             <div class="bandeau1">Projet Ifrocean - Préleveur</div>
             <ol class="breadcrumb">
-                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
                 <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
                 <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonnées zone</a></li>
@@ -49,7 +50,7 @@ and open the template in the editor.
                 <th>Supprimer</th>
                 
             </tr>
-            <?php $zonehasespeces=ZoneHasEspece::getAllZonesHasEspeces();
+            <?php $zonehasespeces=ZoneHasEspece::getAllZonesHasEspecesById($id);
             foreach ($zonehasespeces as $zonehasespece){
             ?>
             <tr>

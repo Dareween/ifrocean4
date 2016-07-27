@@ -23,5 +23,5 @@ $pla->Inserer();
 
 
 //renvoie vers une page
-header('location: 2-2-ListeDesPlagesConsulterModifierChercheur.php');
+header('location: 2-3-ListeDesPlagesChercheur.php');
 

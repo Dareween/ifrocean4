@@ -144,6 +144,36 @@ class Zone extends Polygone {
     }
     
     
+       public static function getAllZonesById($id) {
+        $pdo = new PDO("mysql:host=" . Config::SERVERNAME
+                . ";dbname=" . Config::DBNAME
+                , Config::USERNAME
+                , Config::PASSWORD);
+
+        $req = $pdo->prepare("select id, plage_id, latAdegre, latAmin, latAsec, longAdegre, longAmin, longAsec, "
+                . "latBdegre, latBmin, latBsec, longBdegre, longBmin, longBsec, "
+                . "latCdegre, latCmin, latCsec, longCdegre, longCmin, longCsec, "
+                . "latDdegre, latDmin, latDsec, longDdegre, longDmin, longDsec, "
+                . "couleur, surface from zones WHERE plage_id='$id'");
+
+        $req->execute();
+
+        if ($req->rowCount() >= 1) {
+            $zones = array();
+
+            while ($ligne = $req->fetch()) {
+                $p1 = new Point($ligne["latAdegre"], $ligne["latAmin"], $ligne["latAsec"], $ligne["longAdegre"], $ligne["longAmin"], $ligne["longAsec"]);
+                $p2 = new Point($ligne["latBdegre"], $ligne["latBmin"], $ligne["latBsec"], $ligne["longBdegre"], $ligne["longBmin"], $ligne["longBsec"]);
+                $p3 = new Point($ligne["latCdegre"], $ligne["latCmin"], $ligne["latCsec"], $ligne["longCdegre"], $ligne["longCmin"], $ligne["longCsec"]);
+                $p4 = new Point($ligne["latDdegre"], $ligne["latDmin"], $ligne["latDsec"], $ligne["longDdegre"], $ligne["longDmin"], $ligne["longDsec"]);
+                $zones[] = new Zone($p1, $p2, $p3, $p4, $ligne["couleur"], $ligne["plage_id"], $ligne["id"], $ligne["surface"]);
+                
+            }
+            return $zones;
+        }
+    }
+    
+    
     public static function getById($cle) {
         $pdo = new PDO("mysql:host=" . Config::SERVERNAME
                 . ";dbname=" . Config::DBNAME

@@ -70,5 +70,7 @@ $zo->Inserer();
 
 
 //renvoie vers une page
-header("Location: 1-4-BDD-AjouterZoneHasEspece.php?id=$plage_id");
+header("Location: 1-10-ChoixDesActions.php");
+
+//header("Location: 1-4-BDD-AjouterZoneHasEspece.php?id=$plage_id");
 

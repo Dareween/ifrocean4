@@ -43,6 +43,6 @@ $zone_has_espece->Inserer();
 
 
 //renvoie vers une page
-header('location: 1-4-ListeDesZonesHasEspeces.php');
+header('location: 1-2-ChoixPlagesPreleveur.php');
 
 

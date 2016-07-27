@@ -27,7 +27,7 @@ and open the template in the editor.
              
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
-                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="2-0-ChoixDesActions.php">Actions Chercheur</a></li>
                
 </ol>
@@ -66,7 +66,8 @@ and open the template in the editor.
                 } ?></td>
                 <td><a href="2-2-4-CloturerPlage.php?id=<?php echo $plage->id ?>">Ouvrir / fermer étude</a></td>
                 <td><a href="2-4-ListeDesPlagesHasZonesHasEspecesChercheur.php?id=<?php echo $plage->id ?>">Consulter et exporter</a></td>
-                <td><a href="2-2-4-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a></td>
+                <td><a href="2-2-4-ModifierPlage.php?id=<?php echo $plage->id ?>">Modifier</a><?php echo $plage->id ?></td>
+                
                 
                 <td><a href="2-2-4-SupprimerPlage.php?id=<?php echo $plage->id ?>">Supprimer</a></td>
             </tr> 

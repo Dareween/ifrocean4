@@ -26,7 +26,7 @@ and open the template in the editor.
      <header>
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
-                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="2-0-ChoixDesActions.php">Actions Chercheur</a></li>
                
 </ol>

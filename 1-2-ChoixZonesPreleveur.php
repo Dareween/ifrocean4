@@ -1,5 +1,13 @@
 <?php
 include_once 'Ifrocean_BDD/Plage.php';
+include_once 'Ifrocean_BDD/Zone.php';
+
+$id=$_GET["id"];
+$plage=Plage::getById($id);
+
+
+echo ($plage->id);
+
 
 ?>
 
@@ -13,7 +21,7 @@ and open the template in the editor.
 <html>
    <head>
         <meta charset="UTF-8">
-        <title>Sélectionner une plage</title>
+        <title>Choisir une zone</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -30,16 +38,16 @@ and open the template in the editor.
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
 </ol>
         </header>
-        <h1>Sélectionner une plage</h1>
+        <h1>Choisissez une zone</h1>
         
                 <ul>
-                    <?php $plages=Plage::getAllPlagesNonCloturees();
-                    foreach ($plages as $plage){
+                    <?php $zones=Zone::getAllZonesById($id);
+                    foreach ($zones as $zone){
                     ?>   
                 
                       
         
-                    <li><a href="1-2-BDD-AjouterZonePreleveur.php?id=<?php echo $plage->id ?>"><?php echo $plage->nomplage ?>. n°<?php echo $plage->id ?></a></li>
+                    <li><a href="1-4-BDD-AjouterZoneHasEspece.php?id=<?php echo $plage->id ?>&id2=<?php echo $zone->id  ?>">Zone n°<?php echo $zone->id ?></a></li>
                     
                  
                   <?php  

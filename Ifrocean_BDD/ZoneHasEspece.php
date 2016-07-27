@@ -101,7 +101,37 @@ class ZoneHasEspece {
                 , Config::USERNAME
                 , Config::PASSWORD);
 
-        $req = $pdo->prepare("SELECT id_zhe, zone_id, espece_id, zones.plage_id, quantite, densite_zone FROM zones_has_especes, especes, zones GROUP BY zone_id");
+        $req = $pdo->prepare("SELECT id_zhe, zone_id, espece_id, zones.plage_id, quantite, densite_zone FROM zones_has_especes, especes, zones GROUP BY id_zhe ORDER BY zone_id, espece_id, id_zhe ");
+        
+        $req->execute();
+        
+
+        if ($req->rowCount() >= 1) {
+      
+            while ($ligne = $req->fetch()) {
+                $zoneshasespeces[] = new ZoneHasEspece($ligne["zone_id"], $ligne["espece_id"], $ligne["plage_id"], $ligne["quantite"], $ligne["id_zhe"] );
+                
+                
+            }
+          
+            return $zoneshasespeces;
+            
+        }
+        
+     
+        
+        
+        
+    }
+    
+    
+        public static function getAllZonesHasEspecesById($id) {
+        $pdo = new PDO("mysql:host=" . Config::SERVERNAME
+                . ";dbname=" . Config::DBNAME
+                , Config::USERNAME
+                , Config::PASSWORD);
+
+        $req = $pdo->prepare("SELECT id_zhe, zone_id, espece_id, zones.plage_id, quantite, densite_zone FROM zones_has_especes, especes, zones GROUP BY id_zhe ORDER BY zone_id, espece_id, id_zhe WHERE zone_id ='$id ");
         
         $req->execute();
         

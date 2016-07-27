@@ -21,7 +21,7 @@ include_once 'Ifrocean_BDD/Plage.php';
         <header>
             <div class="bandeau1">Projet Ifrocean - Préleveur</div>
             <ol class="breadcrumb">
-                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="1-1-ListeDesPlagesPreleveur.php">Sélection plage</a></li>
                 <li><a href="1-10-ChoixDesActions.php">Actions zone</a></li>
                 <li><a href="1-2-BDD-AjouterZonePreleveur.php">Coordonnées zone</a></li>
@@ -30,11 +30,7 @@ include_once 'Ifrocean_BDD/Plage.php';
         
      <div class="container">
             <h1>Ajouter une zone</h1>
-            <hr>
-             <a href="1-3-ListeDesZonesPreveleur.php" class="btn btn-primary btn-lg active btn-lg" role="button">Voir et modifier les zones
-                  <br> déjà crées</a>
-            <hr>
-            
+           
             
                 <form action="1-2-POSTAjouterZone.php"
                   method="post">

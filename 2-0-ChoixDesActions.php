@@ -18,7 +18,7 @@
         <header>
             <div class="bandeau1">Projet Ifrocean - Chercheur</div>
             <ol class="breadcrumb">
-                <li><a href="0-0-indexAccueil.php">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="2-0-ChoixDesActions.php">Actions Chercheur</a></li>
                
 </ol>
@@ -43,7 +43,7 @@
               <a href="1-7-ListeDesEspecesPreleveur.php" class="btn btn-success btn-lg active" role="button">Voir et modifier les espèces</a>
               </br>
               </br>
-              <a href="14-BDD-AjouterZoneHasEspece.php" class="btn btn-success btn-lg active" role="button">Ajouter un prélevement</a>
+              <a href="1-2-ChoixPlagesPreleveur.php" class="btn btn-success btn-lg active" role="button">Ajouter un prélevement</a>
               <a href="14-ListeDesZonesHasEspeces.php" class="btn btn-success btn-lg active" role="button">Voir et supprimer des prélevements</a>
                <br>
                </br>
